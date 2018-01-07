@@ -1,0 +1,35 @@
+//
+//  {{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+
+final class {{ module_info.name }}Presenter {
+
+    // MARK: - Private properties -
+
+    fileprivate weak var _view: {{ module_info.name }}ViewInterface?
+    fileprivate var _interactor: {{ module_info.name }}InteractorInterface
+    fileprivate var _wireframe: {{ module_info.name }}WireframeInterface
+
+    // MARK: - Lifecycle -
+
+    init(wireframe: {{ module_info.name }}WireframeInterface, view: {{ module_info.name }}ViewInterface, interactor: {{ module_info.name }}InteractorInterface) {
+        _wireframe = wireframe
+        _view = view
+        _interactor = interactor
+    }
+}
+
+// MARK: - Extensions -
+
+extension {{ module_info.name }}Presenter: {{ module_info.name }}PresenterInterface {
+}
+
+extension {{ module_info.name }}Presenter: {{ module_info.name }}InteractorOutputInterface {
+}
+

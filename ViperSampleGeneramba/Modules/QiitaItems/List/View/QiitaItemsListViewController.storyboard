@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Qiita Items List View Controller-->
+        <scene sceneID="1DG-Ss-aZC">
+            <objects>
+                <viewController storyboardIdentifier="QiitaItemsListViewController" id="6xy-tY-ymU" customClass="QiitaItemsListViewController" customModule="ViperSampleGeneramba" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7m8-vu-1EF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ed-wa-rYv">
+                                <rect key="frame" x="16" y="323" width="343" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ScH-eg-WbP">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ScH-eg-WbP" secondAttribute="bottom" id="3So-TN-bwc"/>
+                            <constraint firstItem="7Ed-wa-rYv" firstAttribute="leading" secondItem="bLR-Re-knY" secondAttribute="leading" constant="16" id="5js-rK-tTX"/>
+                            <constraint firstItem="7Ed-wa-rYv" firstAttribute="centerX" secondItem="7m8-vu-1EF" secondAttribute="centerX" id="5uZ-Zx-P12"/>
+                            <constraint firstItem="ScH-eg-WbP" firstAttribute="top" secondItem="bLR-Re-knY" secondAttribute="top" id="CcT-Ze-WGA"/>
+                            <constraint firstItem="bLR-Re-knY" firstAttribute="bottom" secondItem="ScH-eg-WbP" secondAttribute="bottom" id="OXA-uc-yIn"/>
+                            <constraint firstItem="ScH-eg-WbP" firstAttribute="leading" secondItem="bLR-Re-knY" secondAttribute="leading" id="PWR-OQ-bwJ"/>
+                            <constraint firstItem="bLR-Re-knY" firstAttribute="trailing" secondItem="7Ed-wa-rYv" secondAttribute="trailing" constant="16" id="X1c-e3-OEn"/>
+                            <constraint firstItem="7Ed-wa-rYv" firstAttribute="centerY" secondItem="7m8-vu-1EF" secondAttribute="centerY" id="bm9-jL-EMn"/>
+                            <constraint firstItem="bLR-Re-knY" firstAttribute="trailing" secondItem="ScH-eg-WbP" secondAttribute="trailing" id="ub1-5B-Dkw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bLR-Re-knY"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="3So-TN-bwc"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="3So-TN-bwc"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="3So-TN-bwc"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="noResultLabel" destination="7Ed-wa-rYv" id="y3C-dj-YE9"/>
+                        <outlet property="tableView" destination="ScH-eg-WbP" id="gkA-nU-gRG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="63R-ME-jtn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-274.39999999999998" y="170.46476761619192"/>
+        </scene>
+    </scenes>
+</document>

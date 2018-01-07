@@ -1,0 +1,33 @@
+//
+//  {{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+
+final class {{ module_info.name }}ViewController: UIViewController {
+
+    // MARK: - Public properties -
+
+    var presenter: {{ module_info.name }}PresenterInterface!
+
+    // MARK: - Lifecycle -
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }	
+}
+
+// MARK: - Extensions -
+
+extension {{ module_info.name }}ViewController: {{ module_info.name }}ViewInterface {
+}
+
+extension {{ module_info.name }}ViewController: StoryboardLoadable {
+    static var storyboardName: String {
+        return Storyboard.{{ module_info.name }}ViewController.name
+    }
+}

@@ -1,0 +1,36 @@
+//
+//  {{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+protocol {{ module_info.name }}WireframeInterface: WireframeInterface {
+    func present{{ module_info.name }}Module(fromCaller caller: Any)
+}
+
+protocol {{ module_info.name }}ViewInterface: ViewInterface {
+    var presenter: {{ module_info.name }}PresenterInterface! { get set }
+}
+
+protocol {{ module_info.name }}PresenterInterface: PresenterInterface {
+    var view: {{ module_info.name }}ViewInterface? { get set }
+    var interactor: {{ module_info.name }}InteractorInterface? { get set }
+    var wireframe: {{ module_info.name }}WireframeInterface? { get set }
+}
+
+protocol {{ module_info.name }}InteractorInterface: InteractorInterface {
+    weak var output: {{ module_info.name }}InteractorOutputInterface? { get set }
+    var APIDataManager: {{ module_info.name }}APIDataManagerInterface? { get set }
+    var localDataManager: {{ module_info.name }}LocalDataManagerInterface? { get set }
+}
+
+protocol {{ module_info.name }}InteractorOutputInterface: InteractorOutputInterface {
+}
+
+protocol {{ module_info.name }}APIDataManagerInterface: DataManagerInterface {
+}
+
+protocol {{ module_info.name }}LocalDataManagerInterface: DataManagerInterface {
+}
