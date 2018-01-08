@@ -15,7 +15,8 @@ final class QiitaItemsListViewController: UIViewController {
     private var imageLoadQueue = OperationQueue()
     private var imageLoadOperations = [IndexPath: ImageLoadOperation]()
     private var searchController = UISearchController(searchResultsController: nil)
-
+    private var searchText: String = ""
+    
     // MARK: - Lifecycle -
 
     override func viewDidLoad() {
@@ -228,7 +229,11 @@ extension QiitaItemsListViewController: UISearchResultsUpdating {
 
 
     @objc func searchBarTextDidChange(_ searchBar: UISearchBar) {
-        let text = searchBar.text ?? ""
+        
+        guard let text = searchBar.text,
+            !text.isEmpty, searchText != text else { return }
+        
+        searchText = text
         presenter.searchBarTextDidChange(text: text)
     }
 }
