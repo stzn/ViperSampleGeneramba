@@ -383,8 +383,7 @@
 			children = (
 				5AEE06A834F85C433E6DB6FB /* QiitaItemDetailWireframe.swift */,
 			);
-			name = Wireframe;
-			path = ../../QiitaItemDetail/Wireframe;
+			path = Wireframe;
 			sourceTree = "<group>";
 		};
 		60776653C13B41B24FECA154 /* Interactor */ = {
@@ -400,8 +399,7 @@
 			children = (
 				C74C1D0F1E83E3D31C9D652C /* QiitaItemDetailPresenter.swift */,
 			);
-			name = Presenter;
-			path = ../../QiitaItemDetail/Presenter;
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		67A683060055CBC446ACE775 /* View */ = {
@@ -410,8 +408,7 @@
 				A671CB2D19B7E19781CFCB22 /* QiitaItemDetailViewController.swift */,
 				AB3DD2AE1FFB29F400716508 /* QiitaItemDetailViewController.storyboard */,
 			);
-			name = View;
-			path = ../../QiitaItemDetail/View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		6E5914A59386C98F0E33B49A /* Wireframe */ = {
@@ -468,8 +465,7 @@
 			children = (
 				3427DFFE4B3120D3F2EB00E8 /* QiitaItemDetailInteractor.swift */,
 			);
-			name = Interactor;
-			path = ../../QiitaItemDetail/Interactor;
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		A1B710A8245C479A90462B3B /* Presenter */ = {
@@ -849,8 +845,7 @@
 			children = (
 				C86E04E00D5E3FF3A9C96E6F /* QiitaItemDetailInterfaces.swift */,
 			);
-			name = Interfaces;
-			path = ../../QiitaItemDetail/Interfaces;
+			path = Interfaces;
 			sourceTree = "<group>";
 		};
 		CDBE9102AC4EC389240C9EF9 /* View */ = {
