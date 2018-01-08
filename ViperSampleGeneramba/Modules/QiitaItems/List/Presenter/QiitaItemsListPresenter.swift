@@ -4,9 +4,9 @@ final class QiitaItemsListPresenter {
 
     // MARK: - Private properties -
     
-    fileprivate weak var _view: QiitaItemsListViewInterface?
-    fileprivate var _interactor: QiitaItemsListInteractorInterface
-    fileprivate var _wireframe: QiitaItemsListWireframeInterface
+    private weak var _view: QiitaItemsListViewInterface?
+    private var _interactor: QiitaItemsListInteractorInterface
+    private var _wireframe: QiitaItemsListWireframeInterface
 
     private var _trigger: TriggerType = TriggerType.refresh
     private var _state: NetworkState = NetworkState.nothing

@@ -11,18 +11,10 @@ final class CustomNavigationController: UINavigationController {
 extension CustomNavigationController {
     
     @objc func logout(_: UIBarButtonItem) {
-        removeUserInfo()
         let root = AppDelegate.shared.rootViewCotnroller
         root.logout()
     }
     
-    private func removeUserInfo() {
-        let defaults = UserDefaults.standard
-        let dictionary = defaults.dictionaryRepresentation()
-        dictionary.keys.forEach { key in
-            defaults.removeObject(forKey: key)
-        }
-    }
 }
 
 extension CustomNavigationController: UINavigationControllerDelegate {

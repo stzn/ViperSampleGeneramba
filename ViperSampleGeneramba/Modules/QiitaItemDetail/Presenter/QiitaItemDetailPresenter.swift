@@ -2,11 +2,11 @@ import UIKit
 
 final class QiitaItemDetailPresenter {
 
-    // MARK: - Private properties -
+    // MARK: - Public properties -
 
-    fileprivate weak var _view: QiitaItemDetailViewInterface?
-    fileprivate var _interactor: QiitaItemDetailInteractorInterface
-    fileprivate var _wireframe: QiitaItemDetailWireframeInterface
+    private weak var _view: QiitaItemDetailViewInterface?
+    private var _interactor: QiitaItemDetailInteractorInterface
+    private var _wireframe: QiitaItemDetailWireframeInterface
     private let _url: URL
 
     // MARK: - Lifecycle -

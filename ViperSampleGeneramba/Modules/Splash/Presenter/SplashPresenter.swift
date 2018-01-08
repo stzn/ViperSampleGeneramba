@@ -2,11 +2,11 @@ import UIKit
 
 final class SplashPresenter {
     
-    // MARK: - Private properties -
+    // MARK: - Public properties -
     
-    fileprivate weak var _view: SplashViewInterface?
-    fileprivate var _interactor: SplashInteractorInterface
-    fileprivate var _wireframe: SplashWireframeInterface
+    private weak var _view: SplashViewInterface?
+    private var _interactor: SplashInteractorInterface
+    private var _wireframe: SplashWireframeInterface
     
     // MARK: - Lifecycle -
     

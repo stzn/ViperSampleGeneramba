@@ -2,11 +2,11 @@ import UIKit
 
 final class LoginPresenter {
     
-    // MARK: - Private properties -
+    // MARK: - Public properties -
     
-    fileprivate weak var _view: LoginViewInterface?
-    fileprivate var _interactor: LoginInteractorInterface
-    fileprivate var _wireframe: LoginWireframeInterface
+    private weak var _view: LoginViewInterface?
+    private var _interactor: LoginInteractorInterface
+    private var _wireframe: LoginWireframeInterface
     
     // MARK: - Lifecycle -
     

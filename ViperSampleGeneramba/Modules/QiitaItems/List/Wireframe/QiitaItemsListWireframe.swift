@@ -2,7 +2,7 @@ import UIKit
 
 final class QiitaItemsListWireframe: QiitaItemsListWireframeInterface {
 
-    // MARK: - Private properties -
+    // MARK: - public properties -
     weak var viewController: CustomNavigationController!
     
     // MARK: - Module setup -
