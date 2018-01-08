@@ -27,9 +27,9 @@ final class QiitaItemsListViewController: UIViewController {
     private func _setupUI() {
         navigationItem.title = "List"
         
+        definesPresentationContext = true
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.showsCancelButton = false
         
         searchController.searchBar.delegate = self
         
@@ -44,8 +44,6 @@ final class QiitaItemsListViewController: UIViewController {
         tableView.register(QiitaItemTableViewCell.self)
         
         tableView.tableFooterView = UIView()
-        tableView.estimatedRowHeight = 80
-        tableView.rowHeight = UITableViewAutomaticDimension
         tableView.delegate = self
         tableView.dataSource = self
         
