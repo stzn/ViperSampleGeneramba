@@ -65,6 +65,9 @@ final class RootViewController: UIViewController {
     }
     
     func logout() {
+        
+        removeUserInfo()
+
         let wireFrame = LoginWireframe()
         let new = wireFrame.configureModule()
         animateFadeTransition(to: new)
@@ -95,6 +98,14 @@ final class RootViewController: UIViewController {
             new.didMove(toParentViewController: self)
             self.current = new
             completion?()
+        }
+    }
+    
+    private func removeUserInfo() {
+        let defaults = UserDefaults.standard
+        let dictionary = defaults.dictionaryRepresentation()
+        dictionary.keys.forEach { key in
+            defaults.removeObject(forKey: key)
         }
     }
 }
