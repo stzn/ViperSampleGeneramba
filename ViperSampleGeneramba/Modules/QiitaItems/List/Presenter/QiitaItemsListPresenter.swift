@@ -60,7 +60,7 @@ final class QiitaItemsListPresenter {
         }
     }
     
-    fileprivate weak var _view: QiitaItemsListViewInterface?
+    private weak var _view: QiitaItemsListViewInterface?
     private var _interactor: QiitaItemsListInteractorInterface
     private var _wireframe: QiitaItemsListWireframeInterface
 
