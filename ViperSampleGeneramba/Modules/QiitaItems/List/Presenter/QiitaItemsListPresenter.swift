@@ -46,7 +46,8 @@ final class QiitaItemsListPresenter {
                 return
             }
             
-            if oldValue.contents == state.contents {
+            if state.trigger != .refresh
+                && oldValue.contents == state.contents {
                 return
             }
             
@@ -138,7 +139,7 @@ extension QiitaItemsListPresenter: QiitaItemsListInteractorOutputInterface {
         var networkState: NetworkState = .nothing
         _view?.hideLoading()
         
-        if state.contents.count != 0 && items.count == 0 {
+        if items.count == 0 {
             networkState = .reachedBottom
         }
         
