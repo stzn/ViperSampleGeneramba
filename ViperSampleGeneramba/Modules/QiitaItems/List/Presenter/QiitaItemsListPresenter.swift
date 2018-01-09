@@ -82,22 +82,31 @@ extension QiitaItemsListPresenter: QiitaItemsListPresenterInterface {
         
         if !state.canLoad { return }
         
-        
         state = State(trigger: .refresh, state: .requesting)
+        
         _interactor.fetchList(query: "", page: 1)
+        
         _view?.showLoading()
     }
     
+    func refresh(searchText: String) {
+        
+        if !state.canLoad { return }
+        
+        state = State(trigger: .refresh, state: .requesting)
+        
+        _interactor.fetchList(query: searchText, page: 1)
+    }
+
     func searchBarTextDidChange(text: String) {
         
         if !state.canLoad { return }
         
-        
         state = State.init(trigger: .searchTextChange,
-                           state: .requesting,
-                           nextPage: 1,
-                           contents: [])
+                           state: .requesting)
+        
         _interactor.fetchList(query: text, page: state.nextPage)
+        
         _view?.showLoading()
     }
     

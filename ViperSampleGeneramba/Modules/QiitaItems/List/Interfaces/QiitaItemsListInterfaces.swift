@@ -13,6 +13,7 @@ protocol QiitaItemsListViewInterface: ViewInterface {
 
 protocol QiitaItemsListPresenterInterface: PresenterInterface {
     func viewDidLoad()
+    func refresh(searchText: String)
     func searchBarTextDidChange(text: String)
     func loadMore(searchText: String)
     func didSelectRowAt(_ indexPath: IndexPath)

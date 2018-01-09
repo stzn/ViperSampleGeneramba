@@ -16,16 +16,20 @@ final class QiitaItemsListViewController: UIViewController {
     private var imageLoadOperations = [IndexPath: ImageLoadOperation]()
     private var searchController = UISearchController(searchResultsController: nil)
     private var searchText: String = ""
+    private let refreshControl = UIRefreshControl()
     
     // MARK: - Lifecycle -
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
         _setupUI()
         presenter.viewDidLoad()
     }
     
     private func _setupUI() {
+        
         navigationItem.title = "List"
         
         definesPresentationContext = true
@@ -41,16 +45,7 @@ final class QiitaItemsListViewController: UIViewController {
             tableView.tableHeaderView = searchController.searchBar
         }
         
-        
-        tableView.register(QiitaItemTableViewCell.self)
-        
-        tableView.tableFooterView = UIView()
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        if #available(iOS 10.0, *) {
-            tableView.prefetchDataSource = self
-        }
+        setTableView()
     }
     
     override func prefersHomeIndicatorAutoHidden() -> Bool {
@@ -58,32 +53,63 @@ final class QiitaItemsListViewController: UIViewController {
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        
         super.viewWillTransition(to: size, with: coordinator)
         setNeedsUpdateOfHomeIndicatorAutoHidden()
     }
+    
+    private func setTableView() {
+        
+        tableView.register(QiitaItemTableViewCell.self)
+        
+        tableView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refresh(sender:)), for:.valueChanged)
+        
+        tableView.tableFooterView = UIView()
+        tableView.delegate = self
+        tableView.dataSource = self
+    
+        if #available(iOS 10.0, *) {
+            tableView.prefetchDataSource = self
+        }
+    }
+    
 }
 
 // MARK: - Extensions -
 
+extension QiitaItemsListViewController {
+    
+    @objc func refresh(sender: UIRefreshControl) {
+        
+        let text = searchController.searchBar.text ?? ""
+        presenter.refresh(searchText: text)
+    }
+}
+
 extension QiitaItemsListViewController: QiitaItemsListViewInterface {
+    
     func showNoContentScreen() {
         
         self.noResultLabel.text = "データが存在しません。"
         self.noResultLabel.isHidden = false
         self.tableView.isHidden = true
         hideLoading()
+        refreshControl.endRefreshing()
         tableView.reloadData()
     }
     
     func showQiitaItemsList() {
+        
         self.noResultLabel.isHidden = true
         self.tableView.isHidden = false
         hideLoading()
+        refreshControl.endRefreshing()
         tableView.reloadData()
     }
     
     func scrolltoTop() {
-
+        
         let indexPath = IndexPath(row: 0, section: 0)
         guard let _ = presenter.itemAt(indexPath) else {
             return
@@ -94,6 +120,7 @@ extension QiitaItemsListViewController: QiitaItemsListViewInterface {
 }
 
 extension QiitaItemsListViewController: StoryboardLoadable {
+    
     static var storyboardName: String {
         return Storyboard.QiitaItemsListViewController.name
     }
@@ -110,6 +137,7 @@ extension QiitaItemsListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell: QiitaItemTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         guard let item = presenter.itemAt(indexPath) else {
             return UITableViewCell()
@@ -149,7 +177,9 @@ extension QiitaItemsListViewController: UITableViewDataSource {
 }
 
 extension QiitaItemsListViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         tableView.deselectRow(at: indexPath, animated: false)
         presenter.didSelectRowAt(indexPath)
     }
@@ -169,6 +199,7 @@ extension QiitaItemsListViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+    
         if let height = cellHeightList[indexPath] {
             return height
         } else {
@@ -182,6 +213,7 @@ extension QiitaItemsListViewController: UITableViewDelegate {
 }
 
 extension QiitaItemsListViewController: UISearchBarDelegate {
+    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         presenter.searchBarTextDidChange(text: "")
     }
