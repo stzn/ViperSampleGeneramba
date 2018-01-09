@@ -10,6 +10,7 @@ class QiitaItemTableViewCell: UITableViewCell {
     @IBOutlet weak var profileNameLabel: UILabel!
     
     func configure(item: QiitaItem){
+        
         self.titleLabel.text = item.title
         self.likeCountLabel.text = String(item.likes_count)
         self.commentCountLabel.text = String(item.comments_count)

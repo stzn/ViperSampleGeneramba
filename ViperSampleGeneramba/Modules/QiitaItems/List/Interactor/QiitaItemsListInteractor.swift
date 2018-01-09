@@ -11,6 +11,7 @@ final class QiitaItemsListInteractor {
 // MARK: - Extensions -
 
 extension QiitaItemsListInteractor: QiitaItemsListInteractorInterface {
+    
     func fetchList(query: String, page: Int) {
         
         api = API.QiitaItemsApi.init(query: query, page: page)

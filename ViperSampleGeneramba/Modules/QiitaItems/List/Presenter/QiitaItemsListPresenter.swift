@@ -2,7 +2,7 @@ import UIKit
 
 
 final class QiitaItemsListPresenter {
-
+    
     struct State: Equatable {
         
         let trigger: TriggerType
@@ -27,6 +27,7 @@ final class QiitaItemsListPresenter {
         }
         
         static func ==(lhs: QiitaItemsListPresenter.State, rhs: QiitaItemsListPresenter.State) -> Bool {
+            
             return lhs.state == rhs.state
                 && lhs.nextPage == rhs.nextPage
                 && lhs.trigger == rhs.trigger
@@ -41,7 +42,9 @@ final class QiitaItemsListPresenter {
     // MARK: - Private properties -
     
     private var state: State = State.initial {
+        
         didSet {
+            
             if oldValue == state {
                 return
             }
@@ -64,9 +67,9 @@ final class QiitaItemsListPresenter {
     private weak var _view: QiitaItemsListViewInterface?
     private var _interactor: QiitaItemsListInteractorInterface
     private var _wireframe: QiitaItemsListWireframeInterface
-
+    
     // MARK: - Lifecycle -
-
+    
     init(wireframe: QiitaItemsListWireframeInterface, view: QiitaItemsListViewInterface, interactor: QiitaItemsListInteractorInterface) {
         _wireframe = wireframe
         _view = view
@@ -77,7 +80,7 @@ final class QiitaItemsListPresenter {
 // MARK: - Extensions -
 
 extension QiitaItemsListPresenter: QiitaItemsListPresenterInterface {
-
+    
     func viewDidLoad() {
         
         if !state.canLoad { return }
@@ -118,7 +121,9 @@ extension QiitaItemsListPresenter: QiitaItemsListPresenterInterface {
                            state: .requesting,
                            nextPage: state.nextPage,
                            contents: state.contents)
+        
         _interactor.fetchList(query: text, page: state.nextPage)
+        
         _view?.showLoading()
     }
     
@@ -143,6 +148,7 @@ extension QiitaItemsListPresenter: QiitaItemsListPresenterInterface {
 }
 
 extension QiitaItemsListPresenter: QiitaItemsListInteractorOutputInterface {
+    
     func fetchedList(items: [QiitaItem]) {
         
         var networkState: NetworkState = .nothing
@@ -156,7 +162,7 @@ extension QiitaItemsListPresenter: QiitaItemsListInteractorOutputInterface {
                            state: networkState,
                            nextPage: state.nextPage + 1,
                            contents: state.contents + items)
-
+        
         if state.trigger == .searchTextChange {
             _view?.scrolltoTop()
         }
@@ -164,11 +170,9 @@ extension QiitaItemsListPresenter: QiitaItemsListInteractorOutputInterface {
     }
     
     func fetchedListError(error: Error) {
-
-        state = State.init(trigger: state.trigger,
-                           state: .nothing,
-                           nextPage: 1,
-                           contents: [])
+        
+        state = State.initial
+        
         _view?.hideWithError(message: error.localizedDescription)
     }
 }
