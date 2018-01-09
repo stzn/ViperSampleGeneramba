@@ -1,33 +1,68 @@
 import UIKit
 
+
 final class QiitaItemsListPresenter {
 
-    // MARK: - Private properties -
-    
-    private weak var _view: QiitaItemsListViewInterface?
-    private var _interactor: QiitaItemsListInteractorInterface
-    private var _wireframe: QiitaItemsListWireframeInterface
-
-    private var _trigger: TriggerType = TriggerType.refresh
-    private var _state: NetworkState = NetworkState.nothing
-    private var nextPage: Int = 1
-    
-    var canLoad: Bool {
-        let loadingState: [NetworkState] = [.requesting, .reachedBottom]
-        return !loadingState.contains(_state)
+    struct State: Equatable {
+        
+        let trigger: TriggerType
+        let state: NetworkState
+        let nextPage: Int
+        let contents: [QiitaItem]
+        
+        init(trigger: TriggerType = .refresh,
+             state: NetworkState = .nothing,
+             nextPage: Int = 1,
+             contents: [QiitaItem] = []) {
+            
+            self.trigger = trigger
+            self.state = state
+            self.nextPage = nextPage
+            self.contents = contents
+        }
+        
+        var canLoad: Bool {
+            let loadingState: [NetworkState] = [.requesting, .reachedBottom]
+            return !loadingState.contains(state)
+        }
+        
+        static func ==(lhs: QiitaItemsListPresenter.State, rhs: QiitaItemsListPresenter.State) -> Bool {
+            return lhs.state == rhs.state
+                && lhs.nextPage == rhs.nextPage
+                && lhs.trigger == rhs.trigger
+                && lhs.contents == rhs.contents
+        }
+        
+        static let initial = State()
     }
     
-    private var contents: [QiitaItem] = [] {
+    
+    
+    // MARK: - Private properties -
+    
+    private var state: State = State.initial {
         didSet {
-            if contents.count > 0 {
+            if oldValue == state {
+                return
+            }
+            
+            if oldValue.contents == state.contents {
+                return
+            }
+            
+            if state.contents.count > 0 {
                 _view?.showQiitaItemsList()
             } else {
-                if _state != .requesting {
+                if state.state != .requesting {
                     _view?.showNoContentScreen()
                 }
             }
         }
     }
+    
+    fileprivate weak var _view: QiitaItemsListViewInterface?
+    private var _interactor: QiitaItemsListInteractorInterface
+    private var _wireframe: QiitaItemsListWireframeInterface
 
     // MARK: - Lifecycle -
 
@@ -44,77 +79,86 @@ extension QiitaItemsListPresenter: QiitaItemsListPresenterInterface {
 
     func viewDidLoad() {
         
-        if !canLoad { return }
+        if !state.canLoad { return }
         
-        _state = .requesting
-        _trigger = .refresh
+        
+        state = State(trigger: .refresh, state: .requesting)
         _interactor.fetchList(query: "", page: 1)
         _view?.showLoading()
     }
     
     func searchBarTextDidChange(text: String) {
         
-        if !canLoad { return }
+        if !state.canLoad { return }
         
-        _state = .requesting
-        _trigger = .searchTextChange
-        nextPage = 1
-        contents = []
-        _interactor.fetchList(query: text, page: nextPage)
+        
+        state = State.init(trigger: .searchTextChange,
+                           state: .requesting,
+                           nextPage: 1,
+                           contents: [])
+        _interactor.fetchList(query: text, page: state.nextPage)
         _view?.showLoading()
     }
     
     func loadMore(searchText text: String) {
         
-        if !canLoad { return }
+        if !state.canLoad { return }
         
-        _state = .requesting
-        _trigger = .loadMore
-        _interactor.fetchList(query: text, page: nextPage)
+        state = State.init(trigger: .loadMore,
+                           state: .requesting,
+                           nextPage: state.nextPage,
+                           contents: state.contents)
+        _interactor.fetchList(query: text, page: state.nextPage)
         _view?.showLoading()
     }
     
     func didSelectRowAt(_ indexPath: IndexPath) {
         
-        guard contents.count > indexPath.row else { return }
+        guard state.contents.count > indexPath.row else { return }
         
-        let item = contents[indexPath.row]
+        let item = state.contents[indexPath.row]
         _wireframe.showDetail(item: item)
     }
     
     func numberOfRows() -> Int {
-        return contents.count
+        return state.contents.count
     }
     
     func itemAt(_ indexPath: IndexPath) -> QiitaItem? {
         
-        guard contents.count > indexPath.row else { return nil }
+        guard state.contents.count > indexPath.row else { return nil }
         
-        return contents[indexPath.row]
+        return state.contents[indexPath.row]
     }
 }
 
 extension QiitaItemsListPresenter: QiitaItemsListInteractorOutputInterface {
     func fetchedList(items: [QiitaItem]) {
         
-        _state = .nothing
+        var networkState: NetworkState = .nothing
         _view?.hideLoading()
-        contents += items
-        nextPage += 1
         
-        if contents.count != 0 && items.count == 0 {
-            _state = .reachedBottom
+        if state.contents.count != 0 && items.count == 0 {
+            networkState = .reachedBottom
         }
         
-        if _trigger == .searchTextChange {
+        state = State.init(trigger: state.trigger,
+                           state: networkState,
+                           nextPage: state.nextPage + 1,
+                           contents: state.contents + items)
+
+        if state.trigger == .searchTextChange {
             _view?.scrolltoTop()
         }
+        
     }
     
     func fetchedListError(error: Error) {
-        _state = .nothing
-        contents = []
-        nextPage = 1
+
+        state = State.init(trigger: state.trigger,
+                           state: .nothing,
+                           nextPage: 1,
+                           contents: [])
         _view?.hideWithError(message: error.localizedDescription)
     }
 }
