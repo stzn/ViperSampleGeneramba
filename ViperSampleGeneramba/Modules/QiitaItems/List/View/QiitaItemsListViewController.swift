@@ -108,9 +108,13 @@ final class QiitaItemsListViewController: UIViewController {
         }
         
         tableView.rx.reachBottom.asSignal(onErrorSignalWith: .empty())
-            .emit(onNext: { _ in
+            .emit(onNext: { [weak self] _ in
+                
+                guard let `self` = self else { return }
+                
                 self.didReachedBottomRelay.accept(())
-            }).disposed(by: disposeBag)
+            })
+            .disposed(by: disposeBag)
         
         tableView.rx.willDisplayCell.asDriver()
             .drive(onNext: { [weak self] (cell, indexPath) in
@@ -169,14 +173,14 @@ final class QiitaItemsListViewController: UIViewController {
             }
             let imageLoadOperation = ImageLoadOperation(url: url)
             imageLoadOperation.completionHandler = { [weak self] image in
-                guard let strongSelf = self else {
+                guard let `self` = self else {
                     return
                 }
                 cell.profileImageView.setRoundedImage(image)
-                strongSelf.imageLoadOperations.removeValue(forKey: indexPath)
+                self.imageLoadOperations.removeValue(forKey: indexPath)
             }
-            self.imageLoadQueue.addOperation(imageLoadOperation)
-            self.imageLoadOperations[indexPath] = imageLoadOperation
+            imageLoadQueue.addOperation(imageLoadOperation)
+            imageLoadOperations[indexPath] = imageLoadOperation
         }
         return cell
     }
