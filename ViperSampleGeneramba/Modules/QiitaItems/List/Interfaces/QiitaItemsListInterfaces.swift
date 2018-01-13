@@ -25,7 +25,6 @@ protocol QiitaItemsListPresenterInterface: PresenterInterface {
     var didStateChange: Signal<QiitaItemsListPresenter.State> { get }
     var didErrorChange: Signal<Error> { get }
 
-    func viewDidLoad()
     func numberOfRows() -> Int
     func itemAt(_ indexPath: IndexPath) ->QiitaItem?
     func bind(input: Input)
