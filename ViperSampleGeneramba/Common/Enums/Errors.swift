@@ -1,13 +1,17 @@
 import Foundation
 
-enum NetworkError: Error {
+protocol APIError: Error {
+    var message: String { get }
+}
+
+enum NetworkError: APIError {
     case general(Error)
     case request(String)
     case parse(Error)
     case response(String)
     case invalidStatusCode(Int)
     
-    var localizedDescription: String {
+    var message: String {
         switch self {
         case .general(let error):
             return "General Error \(error.localizedDescription)"

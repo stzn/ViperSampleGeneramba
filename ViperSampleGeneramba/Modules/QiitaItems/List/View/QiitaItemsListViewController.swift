@@ -71,13 +71,12 @@ final class QiitaItemsListViewController: UIViewController {
         
         presenter.didErrorChange.emit(onNext: { [weak self] error in
 
-            guard let `self` = self else { return }
+            guard let `self` = self, let error = error as? APIError else { return }
 
-            self.showErrorAlert(with: error.localizedDescription) { _ in
+            self.showErrorAlert(with: error.message) { _ in
                 self.hideLoading()
                 self.refreshControl.endRefreshing()
             }
-            
         })
         .disposed(by: disposeBag)
         
