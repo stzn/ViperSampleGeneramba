@@ -1,17 +1,15 @@
 import Foundation
 
-protocol APIError: Error {
-    var message: String { get }
-}
-
-enum NetworkError: APIError {
+enum NetworkError: Error {
     case general(Error)
     case request(String)
     case parse(Error)
     case response(String)
     case invalidStatusCode(Int)
-    
-    var message: String {
+}
+
+extension NetworkError: LocalizedError {
+    public var errorDescription: String? {
         switch self {
         case .general(let error):
             return "General Error \(error.localizedDescription)"
@@ -30,8 +28,10 @@ enum NetworkError: APIError {
 enum ValidationError: String, Error {
     case loginRequired = "ログインIDとパスワードは必ず入力してください"
     case loginFailed = "ログインIDまたはパスワードが間違っています。"
-    
-    var localizedDescription: String {
+}
+
+extension ValidationError: LocalizedError {
+    public var errorDescription: String? {
         return self.rawValue
     }
 }
@@ -39,8 +39,10 @@ enum ValidationError: String, Error {
 enum OtherError: Error {
     case unexpected(Error)
     case unknownError
-    
-    var localizedDescription: String {
+}
+
+extension OtherError: LocalizedError {
+    public var errorDescription: String? {
         switch self {
         case let .unexpected(error):
             return "エラー: \(error.localizedDescription)"
