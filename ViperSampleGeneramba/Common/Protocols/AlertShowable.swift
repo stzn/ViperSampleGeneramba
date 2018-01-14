@@ -1,11 +1,3 @@
-//
-//  AlertShowable.swift
-//  ViperSampleGeneramba
-//
-//  Created by stakata on 2018/01/07.
-//  Copyright © 2018年 officekoma. All rights reserved.
-//
-
 import UIKit
 
 protocol AlertShowable {

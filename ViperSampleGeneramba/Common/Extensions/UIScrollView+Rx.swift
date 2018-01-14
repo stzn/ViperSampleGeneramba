@@ -1,11 +1,3 @@
-//
-//  UIScrollView+Rx.swift
-//  SwiftInfoCollector
-//
-//  Created by stakata on 2017/12/16.
-//  Copyright © 2017年 officekoma. All rights reserved.
-//
-
 import RxSwift
 import RxCocoa
 import UIKit
