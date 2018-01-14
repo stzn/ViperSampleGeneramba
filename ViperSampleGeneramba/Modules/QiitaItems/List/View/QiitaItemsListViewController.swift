@@ -66,7 +66,20 @@ final class QiitaItemsListViewController: UIViewController {
                     self.scrolltoTop()
                 }
             }
-        }).disposed(by: disposeBag)
+        })
+        .disposed(by: disposeBag)
+        
+        presenter.didErrorChange.emit(onNext: { [weak self] error in
+
+            guard let `self` = self else { return }
+
+            self.showErrorAlert(with: error.localizedDescription) { _ in
+                self.hideLoading()
+                self.refreshControl.endRefreshing()
+            }
+            
+        })
+        .disposed(by: disposeBag)
         
         presenter.bind(input: (
             searchBarText: searchController.searchBar.rx.text

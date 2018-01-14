@@ -10,7 +10,7 @@ import UIKit
 
 protocol AlertShowable {
     func showAlert(with title: String?, message: String?)
-    func showErrorAlert(with message: String)
+    func showErrorAlert(with message: String, handler: ((UIAlertAction) -> Void)?)
 }
 
 extension AlertShowable where Self: UIViewController {
@@ -19,8 +19,8 @@ extension AlertShowable where Self: UIViewController {
         showAlert(with: title, message: message, actions: [okAction])
     }
     
-    func showErrorAlert(with message: String) {
-        Alert.shared.alert(title: "エラー", message: message)
+    func showErrorAlert(with message: String, handler: ((UIAlertAction) -> Void)? = nil) {
+        showAlert(with: "エラー", message: message, handler: handler)
     }
     
     func showAlert(with title: String?, message: String?, actions: [UIAlertAction]? = nil, handler: ((UIAlertAction) -> Void)? = nil) {

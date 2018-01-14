@@ -7,7 +7,7 @@ enum NetworkError: Error {
     case response(String)
     case invalidStatusCode(Int)
     
-    var message: String {
+    var localizedDescription: String {
         switch self {
         case .general(let error):
             return "General Error \(error.localizedDescription)"
