@@ -103,6 +103,8 @@ extension QiitaItemsListPresenter: QiitaItemsListPresenterInterface {
             
             if !self.state.canLoad { return }
             
+            self._view?.showLoading()
+            
             self.fetchFirstPage(trigger: .searchTextChange, text: text)
         })
         .disposed(by: disposeBag)
@@ -122,7 +124,9 @@ extension QiitaItemsListPresenter: QiitaItemsListPresenterInterface {
                               contents: self.state.contents,
                               error: nil
                 )
-                
+
+                self._view?.showLoading()
+
                 self.fetchList(text: text)
             })
             .disposed(by: disposeBag)
@@ -137,6 +141,8 @@ extension QiitaItemsListPresenter: QiitaItemsListPresenterInterface {
         
         input.searchBarCancelTap.emit(onNext: { [weak self] _ in
             guard let `self` = self else { return }
+            
+            self._view?.showLoading()
             
             self.fetchFirstPage(trigger: .searchTextChange)
         })
@@ -179,8 +185,6 @@ extension QiitaItemsListPresenter: QiitaItemsListPresenterInterface {
     }
     
     private func fetchList(text: String) {
-        
-        _view?.showLoading()
         
         _interactor
             .fetchList(query: text, page: state.nextPage)
