@@ -1,0 +1,9 @@
+{
+  "commitish" : "1.0.2",
+  "iOS" : [
+    {
+      "name" : "RxFeedback",
+      "hash" : "16864d7bb6bc751edcf76b3fc0078eecbe09494a4eeb617ccd0611bd1f456cce"
+    }
+  ]
+}

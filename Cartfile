@@ -1,0 +1,3 @@
+github "ReactiveX/RxSwift" ~> 4.0
+github "RxSwiftCommunity/RxDataSources" ~> 3.0
+github "NoTests/RxFeedback" ~> 1.0.2

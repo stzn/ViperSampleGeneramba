@@ -1,0 +1,43 @@
+//
+//  {{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+
+final class {{ module_info.name }}Wireframe: BaseWireframe {
+
+    // MARK: - Private properties -
+
+    // MARK: - Module setup -
+
+    func configureModule(with viewController: {{ module_info.name }}ViewController) {
+        let interactor = {{ module_info.name }}Interactor()
+        let presenter = {{ module_info.name }}Presenter(wireframe: self, view: viewController, interactor: interactor)
+        viewController.presenter = presenter
+        interactor.output = presenter
+    }
+
+    // MARK: - Transitions -
+
+    func show(with transition: Transition, animated: Bool = true) {
+        let moduleViewController = {{ module_info.name }}ViewController.fromStoryboard()
+        configureModule(with: moduleViewController)
+
+        show(moduleViewController, with: transition, animated: animated)
+    }
+}
+
+// MARK: - Extensions -
+
+extension {{ module_info.name }}Wireframe: {{ module_info.name }}WireframeInterface {
+
+    func navigate(to option: {{ module_info.name }}NavigationOption) {
+        switch option {
+        }
+    }
+}
+

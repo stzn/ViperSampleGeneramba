@@ -1,0 +1,4 @@
+framework module RxFeedback {
+    header "RxFeedback-Swift.h"
+    requires objc
+}
