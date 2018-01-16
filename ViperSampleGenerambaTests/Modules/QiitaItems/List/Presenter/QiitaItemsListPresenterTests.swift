@@ -22,35 +22,8 @@ class QiitaItemsListPresenterTests: XCTestCase {
         var asyncExpectation: XCTestExpectation? = nil
         var asyncScrollTopExpectation: XCTestExpectation? = nil
         
-        var isScrollTopTesting: Bool = false
-        
-        var isShowNoContent: Bool = false
-        var isShowQiitaItemList: Bool = false
         var isScrollTop: Bool = false
-        
-        func showNoContentScreen() {
-            
-            guard asyncScrollTopExpectation == nil else { return }
-            
-            guard let expectation = asyncExpectation else {
-                XCTFail("no expecation")
-                return
-            }
-            isShowNoContent = true
-            expectation.fulfill()
-        }
-        
-        func showQiitaItemsList() {
-            
-            guard asyncScrollTopExpectation == nil else { return }
-            
-            guard let expectation = asyncExpectation else {
-                XCTFail("no expecation")
-                return
-            }
-            isShowQiitaItemList = true
-            expectation.fulfill()
-        }
+
         
         func scrolltoTop() {
             
