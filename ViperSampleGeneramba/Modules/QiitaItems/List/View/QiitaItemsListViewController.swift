@@ -60,9 +60,8 @@ final class QiitaItemsListViewController: UIViewController {
                 state.map { $0.searchText }.drive(me.searchController.searchBar.rx.text),
                 state.filter{ $0.error != nil }.map{ $0.error }
                     .drive(onNext: { error in
-                        me.showErrorAlert(with: error!.localizedDescription) { _ in
-                            me.hideLoading()
-                            me.refreshControl.endRefreshing()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                            me.showErrorAlert(with: error!.localizedDescription)
                         }
                     }),
                 state.map { $0.contents }.drive(me.tableView.rx.items(cellIdentifier: QiitaItemTableViewCell.reuseIdentifier, cellType: QiitaItemTableViewCell.self))(me.configureCell)
@@ -94,8 +93,13 @@ final class QiitaItemsListViewController: UIViewController {
                     .fetchList(text: text, nextPage: nextPage)
                     .asSignal(onErrorJustReturn: .error(NetworkError.offline))
                     .do(onNext: { [weak self] _ in
-                        self?.hideLoading()
-                        self?.refreshControl.endRefreshing()
+
+                        guard let `self` = self else { return }
+                        
+                        self.hideLoading()
+                        if self.refreshControl.isRefreshing {
+                            self.refreshControl.endRefreshing()
+                        }
                     })
                     .map(Event.response)
                 
