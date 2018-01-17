@@ -7,6 +7,7 @@ enum NetworkError: Error {
     case response(String)
     case invalidStatusCode(Int)
     case offline
+    case noData
 }
 
 extension NetworkError: LocalizedError {
@@ -24,6 +25,8 @@ extension NetworkError: LocalizedError {
             return "Invalid Code \(code)"
         case .offline:
             return "Offline Now"
+        case .noData:
+            return "No Data"
         }
     }
 }

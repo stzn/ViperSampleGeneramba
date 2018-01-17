@@ -46,9 +46,15 @@ final class QiitaItemsListPresenter {
             case .response(.success(let response)):
                 var result = state
                 result.contents += response
-                result.nextPage += 1
+                
+                if !response.isEmpty {
+                    result.nextPage += 1
+                    result.error = nil
+                } else {
+                    result.error = NetworkError.noData
+                }
+                
                 result.shouldLoadNext = false
-                result.error = nil
                 return result
             case .response(.error(let error)):
                 var result = state
