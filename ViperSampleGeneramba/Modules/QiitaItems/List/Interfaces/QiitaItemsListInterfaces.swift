@@ -18,7 +18,7 @@ protocol QiitaItemsListPresenterInterface: PresenterInterface {
 }
 
 protocol QiitaItemsListInteractorInterface: InteractorInterface {
-    func fetchList(query: String, page: Int) -> Single<Result<[QiitaItem]>>
+    func fetchList(query: String, page: Int) -> Single<Result<[QiitaItem], NetworkError>>
 }
 
 protocol QiitaItemsListInteractorOutputInterface: InteractorOutputInterface {

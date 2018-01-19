@@ -26,8 +26,8 @@ protocol LoginPresenterInterface: PresenterInterface {
 }
 
 protocol LoginInteractorInterface: InteractorInterface {
-    func login(id: String , password: String) -> Single<Result<Bool>>
-    func saveUserInfo(_ userInfo: UserInfo) -> Single<Result<Bool>>
+    func login(id: String , password: String) -> Single<Result<Bool, Error>>
+    func saveUserInfo(_ userInfo: UserInfo) -> Single<Result<Bool, Error>>
 }
 
 protocol LoginInteractorOutputInterface: InteractorOutputInterface {

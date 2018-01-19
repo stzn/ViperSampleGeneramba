@@ -1,5 +1,8 @@
 import Foundation
 
+
+enum NoError: Error {}
+
 enum NetworkError: Error {
     case general(Error)
     case request(String)

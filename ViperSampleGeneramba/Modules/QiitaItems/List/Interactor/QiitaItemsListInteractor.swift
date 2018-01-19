@@ -12,7 +12,7 @@ final class QiitaItemsListInteractor {
 // MARK: - Extensions -
 
 extension QiitaItemsListInteractor: QiitaItemsListInteractorInterface {
-    func fetchList(query: String, page: Int) -> Single<Result<[QiitaItem]>> {
+    func fetchList(query: String, page: Int) -> Single<Result<[QiitaItem], NetworkError>> {
     
         api = API.QiitaItemsApi.init(query: query, page: page)
     

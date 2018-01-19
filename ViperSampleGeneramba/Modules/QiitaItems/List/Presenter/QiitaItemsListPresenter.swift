@@ -88,7 +88,7 @@ final class QiitaItemsListPresenter {
         case searchReset(Any)
     }
     
-    typealias QiitaItemsResponse = Result<[QiitaItem]>
+    typealias QiitaItemsResponse = Result<[QiitaItem], NetworkError>
 
     
     // MARK: - Public properties -

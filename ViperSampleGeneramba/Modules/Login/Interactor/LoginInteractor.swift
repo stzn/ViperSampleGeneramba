@@ -9,7 +9,7 @@ final class LoginInteractor {
 
 extension LoginInteractor: LoginInteractorInterface {
 
-    func saveUserInfo(_ userInfo: UserInfo) -> Single<Result<Bool>> {
+    func saveUserInfo(_ userInfo: UserInfo) -> Single<Result<Bool, Error>> {
         return Single.create(subscribe: { observer in
             UserDefaults.standard.set(true, forKey: UserDefaultsKeys.loggedIn)
             observer(.success(Result.success(true)))
@@ -17,7 +17,7 @@ extension LoginInteractor: LoginInteractorInterface {
         })
     }
     
-    func login(id: String, password: String) -> Single<Result<Bool>>{
+    func login(id: String, password: String) -> Single<Result<Bool, Error>>{
         return Single.create(subscribe: { observer in
             observer(.success(Result.success(true)))
             return Disposables.create()

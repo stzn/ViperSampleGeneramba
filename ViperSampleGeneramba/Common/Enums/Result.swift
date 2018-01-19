@@ -1,12 +1,12 @@
 import Foundation
 
-enum Result<A> {
+enum Result<A, E> {
     case success(A)
-    case error(Error)
+    case error(E)
 }
 
 extension Result {
-    init(_ value: A?, or error: Error) {
+    init(_ value: A?, or error: E) {
         if let value = value {
             self = .success(value)
         } else {
