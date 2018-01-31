@@ -41,7 +41,7 @@ extension AccountPresenter: AccountPresenterInterface {
         
         let columnName = "ニックネーム"
         
-        guard let nickName = nickName else {
+        guard let nickName = nickName, !nickName.isEmpty else {
             showRequiredValidationError(columnName)
             return nil
         }
@@ -52,7 +52,7 @@ extension AccountPresenter: AccountPresenterInterface {
         
         let columnName = "ログインID"
         
-        guard let loginId = loginId else {
+        guard let loginId = loginId, !loginId.isEmpty else {
             showRequiredValidationError(columnName)
             return nil
         }
@@ -63,7 +63,7 @@ extension AccountPresenter: AccountPresenterInterface {
         
         let columnName = "パスワード"
         
-        guard let password = password else {
+        guard let password = password, !password.isEmpty else {
             showRequiredValidationError(columnName)
             return nil
         }
