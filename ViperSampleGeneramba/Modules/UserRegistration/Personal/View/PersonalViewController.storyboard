@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="IUs-kQ-5ZJ">
-                                <rect key="frame" x="37.5" y="173.5" width="300" height="240"/>
+                                <rect key="frame" x="37.5" y="133.5" width="300" height="240"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ovq-UC-ZpJ">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="60"/>
@@ -94,7 +94,7 @@
                         <constraints>
                             <constraint firstItem="IUs-kQ-5ZJ" firstAttribute="width" secondItem="1eV-n2-lpE" secondAttribute="width" multiplier="0.8" id="CQm-mP-gPO"/>
                             <constraint firstItem="IUs-kQ-5ZJ" firstAttribute="centerX" secondItem="1eV-n2-lpE" secondAttribute="centerX" id="Q4o-pS-L5v"/>
-                            <constraint firstItem="IUs-kQ-5ZJ" firstAttribute="centerY" secondItem="1eV-n2-lpE" secondAttribute="centerY" constant="-40" id="WFB-Om-Ikq"/>
+                            <constraint firstItem="IUs-kQ-5ZJ" firstAttribute="centerY" secondItem="1eV-n2-lpE" secondAttribute="centerY" constant="-80" id="WFB-Om-Ikq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xOR-o4-ewR"/>
                     </view>

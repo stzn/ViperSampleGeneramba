@@ -145,7 +145,7 @@
                             <constraint firstItem="jpS-ch-AIl" firstAttribute="centerX" secondItem="Qfd-Qn-eeR" secondAttribute="centerX" id="ECB-So-Tt5"/>
                             <constraint firstItem="jpS-ch-AIl" firstAttribute="width" secondItem="Qfd-Qn-eeR" secondAttribute="width" multiplier="0.9" id="M5I-rV-N3e"/>
                             <constraint firstItem="9JQ-st-bYZ" firstAttribute="top" secondItem="jpS-ch-AIl" secondAttribute="bottom" constant="20" id="kEJ-cC-ZJg"/>
-                            <constraint firstItem="jpS-ch-AIl" firstAttribute="top" secondItem="Qfd-Qn-eeR" secondAttribute="top" constant="48" id="l93-TV-WHv"/>
+                            <constraint firstItem="jpS-ch-AIl" firstAttribute="top" secondItem="fJX-8Q-zaB" secondAttribute="top" constant="28" id="l93-TV-WHv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fJX-8Q-zaB"/>
                     </view>
