@@ -29,7 +29,7 @@ extension AccountPresenter: AccountPresenterInterface {
         
         guard let password = validPassword(password) else { return }
         
-        let login = Account(nickname: nickName, loginId: loginId, password: password)
+        let login = AccountInformation(nickname: nickName, loginId: loginId, password: password)
         _wireframe.goToNextStep(login)
     }
     

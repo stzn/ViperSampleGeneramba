@@ -1,7 +1,7 @@
 import UIKit
 
 struct UserRegistration {
-    let personal: Personal
-    let account: Account
+    let personal: PersonalInformation
+    let account: AccountInformation
     let profileImage: UIImage
 }

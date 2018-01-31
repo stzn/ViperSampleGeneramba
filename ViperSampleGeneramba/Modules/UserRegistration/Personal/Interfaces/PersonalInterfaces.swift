@@ -1,7 +1,7 @@
 import UIKit
 
 protocol PersonalWireframeInterface: WireframeInterface {
-    func goToNextStep(_ output: Personal?)
+    func goToNextStep(_ output: PersonalInformation?)
     func back()
 }
 

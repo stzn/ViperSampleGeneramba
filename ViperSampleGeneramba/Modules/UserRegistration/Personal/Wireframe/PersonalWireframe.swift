@@ -4,7 +4,7 @@ final class PersonalWireframe: PersonalWireframeInterface, Step {
 
     // MARK: - public properties -
     let navigation: UINavigationController
-    var completion: ((Personal?) -> Void)?
+    var completion: ((PersonalInformation?) -> Void)?
 
     init(navigation: UINavigationController) {
         self.navigation = navigation
@@ -14,7 +14,7 @@ final class PersonalWireframe: PersonalWireframeInterface, Step {
 
     // MARK: - Module setup -
 
-    func perform(_ input: Void, completion: @escaping (Personal?) -> Void) {
+    func perform(_ input: Void, completion: @escaping (PersonalInformation?) -> Void) {
 
         let viewController = PersonalViewController.fromStoryboard()
         let interactor = PersonalInteractor()
@@ -29,7 +29,7 @@ final class PersonalWireframe: PersonalWireframeInterface, Step {
     // MARK: - Transitions -
     
     // 次のステップへ遷移
-    func goToNextStep(_ output: Personal?) {
+    func goToNextStep(_ output: PersonalInformation?) {
         self.completion?(output)
     }
     

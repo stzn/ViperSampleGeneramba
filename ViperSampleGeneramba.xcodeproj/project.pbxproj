@@ -137,12 +137,12 @@
 		AB7E674C1FFA21CE0090088A /* QiitaItemsListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB7E674B1FFA21CE0090088A /* QiitaItemsListViewController.storyboard */; };
 		AB7E674F1FFA25DC0090088A /* QiitaItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7E674D1FFA25DC0090088A /* QiitaItemTableViewCell.swift */; };
 		AB7E67501FFA25DC0090088A /* QiitaItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB7E674E1FFA25DC0090088A /* QiitaItemTableViewCell.xib */; };
-		ABA98E64201D93520031B29B /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA98E63201D93520031B29B /* Account.swift */; };
+		ABA98E64201D93520031B29B /* AccountInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA98E63201D93520031B29B /* AccountInformation.swift */; };
 		ABA98E70201D948B0031B29B /* PersonalLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA98E6B201D948B0031B29B /* PersonalLocalDataManager.swift */; };
 		ABA98E71201D948B0031B29B /* PersonalAPIDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA98E6D201D948B0031B29B /* PersonalAPIDataManager.swift */; };
 		ABA98E72201D948B0031B29B /* PersonalInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA98E6F201D948B0031B29B /* PersonalInteractor.swift */; };
 		ABA98E74201D957A0031B29B /* AccountViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABA98E73201D957A0031B29B /* AccountViewController.storyboard */; };
-		ABB80D4F201D718F0035D61A /* Personal.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB80D4E201D718F0035D61A /* Personal.swift */; };
+		ABB80D4F201D718F0035D61A /* PersonalInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB80D4E201D718F0035D61A /* PersonalInformation.swift */; };
 		ABB80D51201D7B3B0035D61A /* PersonalViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABB80D50201D7B3B0035D61A /* PersonalViewController.storyboard */; };
 		ABB80D53201D888E0035D61A /* UserRegistrationFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB80D52201D888E0035D61A /* UserRegistrationFlow.swift */; };
 		ABC682C52002E3DB00CAB337 /* AlertShowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC682C42002E3DB00CAB337 /* AlertShowable.swift */; };
@@ -341,12 +341,12 @@
 		AB7E674B1FFA21CE0090088A /* QiitaItemsListViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QiitaItemsListViewController.storyboard; sourceTree = "<group>"; };
 		AB7E674D1FFA25DC0090088A /* QiitaItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaItemTableViewCell.swift; sourceTree = "<group>"; };
 		AB7E674E1FFA25DC0090088A /* QiitaItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QiitaItemTableViewCell.xib; sourceTree = "<group>"; };
-		ABA98E63201D93520031B29B /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		ABA98E63201D93520031B29B /* AccountInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInformation.swift; sourceTree = "<group>"; };
 		ABA98E6B201D948B0031B29B /* PersonalLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalLocalDataManager.swift; sourceTree = "<group>"; };
 		ABA98E6D201D948B0031B29B /* PersonalAPIDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalAPIDataManager.swift; sourceTree = "<group>"; };
 		ABA98E6F201D948B0031B29B /* PersonalInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalInteractor.swift; sourceTree = "<group>"; };
 		ABA98E73201D957A0031B29B /* AccountViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountViewController.storyboard; sourceTree = "<group>"; };
-		ABB80D4E201D718F0035D61A /* Personal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Personal.swift; sourceTree = "<group>"; };
+		ABB80D4E201D718F0035D61A /* PersonalInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformation.swift; sourceTree = "<group>"; };
 		ABB80D50201D7B3B0035D61A /* PersonalViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PersonalViewController.storyboard; sourceTree = "<group>"; };
 		ABB80D52201D888E0035D61A /* UserRegistrationFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistrationFlow.swift; sourceTree = "<group>"; };
 		ABC682C42002E3DB00CAB337 /* AlertShowable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertShowable.swift; sourceTree = "<group>"; };
@@ -1414,8 +1414,8 @@
 				AB7E67361FFA1BD70090088A /* QiitaItemDTO.swift */,
 				AB2996111FFA103500C44E3C /* UserInfo.swift */,
 				AB2996121FFA103500C44E3C /* YouTubeDataDTO.swift */,
-				ABB80D4E201D718F0035D61A /* Personal.swift */,
-				ABA98E63201D93520031B29B /* Account.swift */,
+				ABB80D4E201D718F0035D61A /* PersonalInformation.swift */,
+				ABA98E63201D93520031B29B /* AccountInformation.swift */,
 				ABE064D6201E803E005C2FC8 /* UserRegistration.swift */,
 			);
 			path = Models;
@@ -2045,7 +2045,7 @@
 				AB2995F41FF9F15600C44E3C /* WireframeInterface.swift in Sources */,
 				ABE20DFE202128D400AA51BD /* ImageCell.swift in Sources */,
 				AB2995E21FF9F15600C44E3C /* YouTubeSearchApiRequest.swift in Sources */,
-				ABA98E64201D93520031B29B /* Account.swift in Sources */,
+				ABA98E64201D93520031B29B /* AccountInformation.swift in Sources */,
 				AB2995FE1FF9F15600C44E3C /* NibLoadable.swift in Sources */,
 				AB2995E11FF9F15600C44E3C /* YouTubeSearch.swift in Sources */,
 				AB2995EE1FF9F15600C44E3C /* Storyboard.swift in Sources */,
@@ -2068,7 +2068,7 @@
 				AB2995F31FF9F15600C44E3C /* UITableViewCell+Extensions.swift in Sources */,
 				AB2995E81FF9F15600C44E3C /* Environments.swift in Sources */,
 				AB3DD2A21FFB15B200716508 /* RootViewController.swift in Sources */,
-				ABB80D4F201D718F0035D61A /* Personal.swift in Sources */,
+				ABB80D4F201D718F0035D61A /* PersonalInformation.swift in Sources */,
 				AB2995FC1FF9F15600C44E3C /* Reusable.swift in Sources */,
 				AB2995EA1FF9F15600C44E3C /* ShortcutKey.swift in Sources */,
 				AB7E67391FFA1CC00090088A /* QiitaItems.swift in Sources */,

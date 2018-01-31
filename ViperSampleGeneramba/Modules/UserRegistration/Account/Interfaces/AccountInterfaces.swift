@@ -1,7 +1,7 @@
 import UIKit
 
 protocol AccountWireframeInterface: WireframeInterface {
-    func goToNextStep(_ output: Account?)
+    func goToNextStep(_ output: AccountInformation?)
     func back()
 }
 

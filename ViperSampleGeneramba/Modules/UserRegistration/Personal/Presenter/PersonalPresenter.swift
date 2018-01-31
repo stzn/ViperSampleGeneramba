@@ -28,7 +28,7 @@ extension PersonalPresenter: PersonalPresenterInterface {
         
         guard let address = validAddress(address) else { return }
         
-        let personal = Personal(name: name, mailAddress: mailAddress, address: address)
+        let personal = PersonalInformation(name: name, mailAddress: mailAddress, address: address)
         _wireframe.goToNextStep(personal)
     }
     

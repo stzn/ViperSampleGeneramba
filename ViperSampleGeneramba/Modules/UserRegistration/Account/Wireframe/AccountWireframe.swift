@@ -4,7 +4,7 @@ final class AccountWireframe: AccountWireframeInterface, Step {
 
     // MARK: - public properties -
     let navigation: UINavigationController!
-    var completion: ((Account?) -> Void)?
+    var completion: ((AccountInformation?) -> Void)?
     
     init(navigation: UINavigationController) {
         self.navigation = navigation
@@ -14,7 +14,7 @@ final class AccountWireframe: AccountWireframeInterface, Step {
     
     // MARK: - Module setup -
     
-    func perform(_ input: Void, completion: @escaping (Account?) -> Void) {
+    func perform(_ input: Void, completion: @escaping (AccountInformation?) -> Void) {
         
         let viewController = AccountViewController.fromStoryboard()
         let interactor = AccountInteractor()
@@ -30,7 +30,7 @@ final class AccountWireframe: AccountWireframeInterface, Step {
     // MARK: - Transitions -
     
     // 次のステップへ遷移
-    func goToNextStep(_ output: Account?) {
+    func goToNextStep(_ output: AccountInformation?) {
         self.completion?(output)
     }
     

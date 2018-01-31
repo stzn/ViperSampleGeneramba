@@ -44,11 +44,11 @@ struct UserRegistrationFlow {
         viewController.present(navigation, animated: true)
     }
     
-    private static func enterPersonalStep(_ navigation: UINavigationController) -> StepT<Void, Personal?> {
+    private static func enterPersonalStep(_ navigation: UINavigationController) -> StepT<Void, PersonalInformation?> {
         return StepT(PersonalWireframe(navigation: navigation))
     }
     
-    private static func enterLoginStep(_ navigation: UINavigationController) -> StepT<Void, Account?> {
+    private static func enterLoginStep(_ navigation: UINavigationController) -> StepT<Void, AccountInformation?> {
         return StepT(AccountWireframe(navigation: navigation))
     }
     
