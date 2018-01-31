@@ -27,6 +27,10 @@ final class LoginViewController: UIViewController {
     @IBAction func loginButtonTapped(_ sender: Any) {
         presenter.loginButtonTapped(id: idTextField.text ?? "", password: passwordTextField.text ?? "")
     }
+    
+    @IBAction func userRegistrationButtonTapped(_ sender: Any) {
+        presenter.userRegistrationButtonTapped()
+    }
 }
 
 // MARK: - Extensions -

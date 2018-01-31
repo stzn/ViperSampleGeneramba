@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Profile Image Select View Controller-->
+        <scene sceneID="WMN-Na-9eN">
+            <objects>
+                <viewController storyboardIdentifier="ProfileImageSelectViewController" id="Kbj-io-YIk" customClass="ProfileImageSelectViewController" customModule="ViperSampleGeneramba" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3Wr-Y1-ahu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noimage" translatesAutoresizingMaskIntoConstraints="NO" id="Bbh-Av-Xgn">
+                                <rect key="frame" x="67" y="68" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="aRX-XA-tdb"/>
+                                    <constraint firstAttribute="width" constant="240" id="ryg-f9-r3O"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="HLE-Fg-jOg">
+                                <rect key="frame" x="115" y="356" width="144" height="99"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pTG-6y-vAP">
+                                        <rect key="frame" x="0.0" y="0.0" width="144" height="34.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <state key="normal" title="自分の写真から選ぶ"/>
+                                        <connections>
+                                            <action selector="selectPhotoButtonTapped:" destination="Kbj-io-YIk" eventType="touchUpInside" id="5Cz-gT-QyI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmC-lL-5y3">
+                                        <rect key="frame" x="8" y="64.5" width="128" height="34.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <state key="normal" title="サンプルから選ぶ"/>
+                                        <connections>
+                                            <action selector="selectSampleButtonTapped:" destination="Kbj-io-YIk" eventType="touchUpInside" id="OUU-lt-u9Z"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HLE-Fg-jOg" firstAttribute="centerX" secondItem="3Wr-Y1-ahu" secondAttribute="centerX" id="3gB-xG-YjT"/>
+                            <constraint firstItem="Bbh-Av-Xgn" firstAttribute="centerX" secondItem="3Wr-Y1-ahu" secondAttribute="centerX" id="OPg-UA-e6r"/>
+                            <constraint firstItem="Bbh-Av-Xgn" firstAttribute="top" secondItem="yox-fW-OEA" secondAttribute="top" constant="48" id="baC-Qz-pKj"/>
+                            <constraint firstItem="yox-fW-OEA" firstAttribute="bottom" secondItem="HLE-Fg-jOg" secondAttribute="bottom" constant="212" id="fMX-3T-BaO"/>
+                            <constraint firstItem="HLE-Fg-jOg" firstAttribute="top" secondItem="Bbh-Av-Xgn" secondAttribute="bottom" constant="48" id="fmB-Mr-wT8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yox-fW-OEA"/>
+                    </view>
+                    <connections>
+                        <outlet property="selectedImageView" destination="Bbh-Av-Xgn" id="jRv-Jh-61t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R9C-ZY-hWJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="241" y="181"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="noimage" width="300" height="300"/>
+    </resources>
+</document>

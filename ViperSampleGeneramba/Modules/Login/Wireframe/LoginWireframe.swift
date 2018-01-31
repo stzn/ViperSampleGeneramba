@@ -3,6 +3,7 @@ import UIKit
 final class LoginWireframe: LoginWireframeInterface {
 
     // MARK: - Private properties -
+    private var _navigationController: UINavigationController!
     
     // MARK: - Module setup -    
     func configureModule() -> UIViewController {
@@ -15,6 +16,8 @@ final class LoginWireframe: LoginWireframeInterface {
         
         let navigationController = UINavigationController(rootViewController: viewController)
         
+        _navigationController = navigationController
+        
         return navigationController
     }
 
@@ -23,5 +26,10 @@ final class LoginWireframe: LoginWireframeInterface {
     func showMainScreen() {        
         let root = AppDelegate.shared.rootViewCotnroller
         root.showMainScreen()
+    }
+    
+    func startUserRegistration() {
+        let root = AppDelegate.shared.rootViewCotnroller
+        root.showRegiatrationScreen()
     }
 }

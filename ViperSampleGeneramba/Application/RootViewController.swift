@@ -58,6 +58,11 @@ final class RootViewController: UIViewController {
         current = new
     }
    
+    func showRegiatrationScreen() {
+
+        UserRegistrationFlow.startUserRegistration(on: self)
+    }
+    
     func switchToMainScreen() {
         let wireFrame = QiitaItemsListWireframe()
         let new = wireFrame.configureModule()

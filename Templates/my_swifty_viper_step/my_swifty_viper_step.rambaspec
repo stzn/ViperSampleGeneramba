@@ -1,0 +1,41 @@
+# Template information section
+name: my_swifty_viper_step
+summary: My Swifty Vipor Template With Step
+author: sztk
+version: 1.0.0
+license: MIT
+
+# The declarations for code files
+code_files:
+#Wireframe
+- {name: Wireframe/Wireframe.swift, path: Code/Wireframe/wireframe.swift.liquid}
+#Presenter
+- {name: Presenter/Presenter.swift, path: Code/Presenter/presenter.swift.liquid}
+#Interfaces
+- {name: Interfaces/Interfaces.swift, path: Code/Interfaces/interfaces.swift.liquid}
+#View
+- {name: View/ViewController.swift, path: Code/View/viewcontroller.swift.liquid}
+#Interactor
+- {name: Interactor/Interactor.swift, path: Code/Interactor/interactor.swift.liquid}
+#DataManager
+- {name: DataManager/API/APIDataManager.swift, path: Code/DataManager/API/apidatamanager.swift.liquid}
+- {name: DataManager/Local/LocalDataManager.swift, path: Code/DataManager/Local/localdatamanager.swift.liquid}
+
+
+# The declarations for test files
+test_files:
+#Wireframe
+- {name: Wireframe/WireframeTests.swift, path: Tests/Wireframe/wireframe_tests.swift.liquid}
+#Presenter
+- {name: Presenter/PresenterTests.swift, path: Tests/Presenter/presenter_tests.swift.liquid}
+#View
+- {name: View/ViewControllerTests.swift, path: Tests/View/view_tests.swift.liquid}
+#Interactor
+- {name: Interactor/InteractorTests.swift, path: Tests/Interactor/interactor_tests.swift.liquid}
+
+#DataManager
+- {name: DataManager/API/APIDataManagerTests.swift, path: Tests/DataManager/API/apidatamanager_tests.swift.liquid}
+- {name: DataManager/Local/LocalDataManagerTests.swift, path: Tests/DataManager/Local/localdatamanager_tests.swift.liquid}
+
+# Template dependencies
+dependencies:

@@ -3,6 +3,7 @@ import UIKit
 protocol AlertShowable {
     func showAlert(title: String?, message: String?)
     func showErrorAlert(message: String)
+    func showAlert(title: String?, message: String?, actions: [UIAlertAction]?, handler: ((UIAlertAction) -> Void)?)
 }
 
 extension AlertShowable where Self: UIViewController {

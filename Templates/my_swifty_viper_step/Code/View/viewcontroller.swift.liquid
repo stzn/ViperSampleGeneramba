@@ -1,0 +1,66 @@
+//
+//  {{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+
+final class {{ module_info.name }}ViewController: UIViewController {
+
+    // MARK: - Public properties -
+
+    var presenter: {{ module_info.name }}PresenterInterface!
+
+    // MARK: - Lifecycle -
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        _setupUI()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.title = ""
+        let barButton = UIBarButtonItem(title: "次へ", style:  .plain, target: self, action: #selector(rightBarButtonTapped))
+        self.navigationItem.rightBarButtonItem = barButton
+        
+        let backButton = UIBarButtonItem(title: "キャンセル", style:  .plain, target: self, action: #selector(backBarButtonTapped))
+        
+        self.navigationItem.leftBarButtonItem = backButton
+    }    
+}
+
+// MARK: - Extensions -
+
+// MARK: - Setup -
+extension {{ module_info.name }}ViewController {
+    
+    private func _setupUI() {
+    }
+}
+
+// MARK: - UserInteraction -
+extension {{ module_info.name }}ViewController {
+    
+    @objc func rightBarButtonTapped(_ sender: Any) {
+        presenter.nextButtonTapped()
+    }
+    
+    @objc func backBarButtonTapped(_ sender: Any) {
+        presenter.backButtonTapped()
+    }
+}
+
+extension {{ module_info.name }}ViewController: {{ module_info.name }}ViewInterface {
+}
+
+extension {{ module_info.name }}ViewController: StoryboardLoadable {
+    static var storyboardName: String {
+        return Storyboard.{{ module_info.name }}ViewController.name
+    }
+}
+

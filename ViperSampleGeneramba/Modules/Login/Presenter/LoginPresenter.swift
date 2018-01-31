@@ -43,6 +43,10 @@ extension LoginPresenter: LoginPresenterInterface {
     private func showPasswordValidationError() {
         _view?.showAlert(title: "エラー", message: "パスワードは英数字8文字以上で入力してください。")
     }
+    
+    func userRegistrationButtonTapped() {
+        _wireframe.startUserRegistration()
+    }
 }
 
 extension LoginPresenter: LoginInteractorOutputInterface {

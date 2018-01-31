@@ -3,6 +3,7 @@ import UIKit
 protocol LoginWireframeInterface: WireframeInterface {
     func configureModule() -> UIViewController
     func showMainScreen()
+    func startUserRegistration()
 }
 
 protocol LoginViewInterface: ViewInterface {
@@ -10,6 +11,7 @@ protocol LoginViewInterface: ViewInterface {
 
 protocol LoginPresenterInterface: PresenterInterface {
     func loginButtonTapped(id: String, password: String)
+    func userRegistrationButtonTapped()
 }
 
 protocol LoginInteractorInterface: InteractorInterface {

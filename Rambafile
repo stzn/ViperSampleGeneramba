@@ -36,3 +36,4 @@ templates:
 - {name: my_swifty_viper}
 - {name: my_swifty_viper2}
 - {name: my_swifty_viper_no_base}
+- {name: my_swifty_viper_step}

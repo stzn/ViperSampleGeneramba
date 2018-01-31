@@ -1,0 +1,34 @@
+//
+//  {{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+
+protocol {{ module_info.name }}WireframeInterface: WireframeInterface {
+    func goToNextStep(_ output: {{ module_info.name }}?)
+    func back()
+}
+
+protocol {{ module_info.name }}ViewInterface: ViewInterface {
+}
+
+protocol {{ module_info.name }}PresenterInterface: PresenterInterface {
+    func nextButtonTapped()
+    func backButtonTapped()
+}
+
+protocol {{ module_info.name }}InteractorInterface: InteractorInterface {
+}
+
+protocol {{ module_info.name }}InteractorOutputInterface: InteractorOutputInterface {
+}
+
+protocol {{ module_info.name }}APIDataManagerInterface: DataManagerInterface {
+}
+
+protocol {{ module_info.name }}LocalDataManagerInterface: DataManagerInterface {
+}

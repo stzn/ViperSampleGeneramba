@@ -1,0 +1,43 @@
+//
+//  {{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+
+final class {{ module_info.name }}Wireframe: {{ module_info.name }}WireframeInterface, Step {
+
+    // MARK: - Private properties -
+    let navigation: UINavigationController
+    var completion: (({{ module_info.name }}?) -> Void)?
+
+    init(navigation: UINavigationController) {
+        self.navigation = navigation
+    }
+
+    // MARK: - Module setup -
+
+    func perform(_ input: Void, completion: @escaping ({{ module_info.name }}?) -> Void) {
+	let viewController = {{ module_info.name }}ViewController.fromStoryboard() 
+        let interactor = {{ module_info.name }}Interactor()
+        let presenter = {{ module_info.name }}Presenter(wireframe: self, view: viewController, interactor: interactor)
+        viewController.presenter = presenter
+        interactor.output = presenter
+        
+        self.completion = completion
+        navigation.pushViewController(viewController, animated: true)
+    }
+
+    // MARK: - Transitions -
+    func goToNextStep(_ output: {{ module_info.name }}?) {
+        self.completion?(output)
+    }
+    
+    func back() {
+        self.completion?(nil)
+    }
+
+}
