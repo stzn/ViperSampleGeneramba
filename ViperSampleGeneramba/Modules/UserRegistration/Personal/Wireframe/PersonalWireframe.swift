@@ -28,7 +28,7 @@ final class PersonalWireframe: PersonalWireframeInterface, Step {
 
     // MARK: - Transitions -
     
-    // 次のステップへ遷移
+    // Go To Next Step
     func goToNextStep(_ output: PersonalInformation?) {
         self.completion?(output)
     }

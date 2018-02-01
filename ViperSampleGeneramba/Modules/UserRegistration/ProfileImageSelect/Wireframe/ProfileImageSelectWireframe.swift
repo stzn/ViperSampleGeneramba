@@ -30,7 +30,7 @@ final class ProfileImageSelectWireframe: ProfileImageSelectWireframeInterface, S
     
     // MARK: - Transitions -
     
-    // 次のステップへ遷移
+    // Go To Next Step
     func goToNextStep(_ output: ProfileImageType?) {
         self.completion?(output)
     }

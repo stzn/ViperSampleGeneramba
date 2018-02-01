@@ -29,7 +29,7 @@ final class AccountWireframe: AccountWireframeInterface, Step {
     
     // MARK: - Transitions -
     
-    // 次のステップへ遷移
+    // Go To Next Step
     func goToNextStep(_ output: AccountInformation?) {
         self.completion?(output)
     }

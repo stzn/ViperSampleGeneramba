@@ -1,5 +1,6 @@
 import UIKit
 
+/// User Registration Flow
 struct UserRegistrationFlow {
 
     static func startUserRegistration(on viewController: UIViewController) {
@@ -50,6 +51,8 @@ struct UserRegistrationFlow {
     
 }
 
+
+/// Register Profile Image Step
 enum ProfileImageType {
     case own(UIImage)
     case sample
