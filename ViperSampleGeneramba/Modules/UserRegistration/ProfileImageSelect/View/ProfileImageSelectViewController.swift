@@ -8,8 +8,6 @@ final class ProfileImageSelectViewController: UIViewController {
 
     @IBOutlet weak var selectedImageView: UIImageView!
     
-    private var imagePicker: UIImagePickerController!
-    
     // MARK: - Lifecycle -
 
     override func viewDidLoad() {
@@ -81,7 +79,7 @@ extension ProfileImageSelectViewController {
     private func showCameraPicker(sourceType: UIImagePickerControllerSourceType) {
         
         if UIImagePickerController.isSourceTypeAvailable(sourceType) {
-            imagePicker = UIImagePickerController()
+            let imagePicker = UIImagePickerController()
             imagePicker.sourceType = sourceType
             imagePicker.delegate = self
             self.present(imagePicker, animated: true)
@@ -104,10 +102,10 @@ extension ProfileImageSelectViewController: UINavigationControllerDelegate, UIIm
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             selectedImageView.image = pickedImage
         }
-        imagePicker.dismiss(animated: true)
+        picker.dismiss(animated: true)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        imagePicker.dismiss(animated: true)
+        picker.dismiss(animated: true)
     }
 }
