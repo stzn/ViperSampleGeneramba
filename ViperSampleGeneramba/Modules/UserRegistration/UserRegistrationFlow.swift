@@ -1,11 +1,3 @@
-//
-//  UserRegistrationFlow.swift
-//  ViperSampleGeneramba
-//
-//  Created by stakata on 2018/01/28.
-//  Copyright © 2018年 officekoma. All rights reserved.
-//
-
 import UIKit
 
 struct UserRegistrationFlow {
