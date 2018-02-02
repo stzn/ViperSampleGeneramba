@@ -1,6 +1,5 @@
 import UIKit
 
-// Inputを受け取り、非同期で実行し、結果をOutputにしてコールバックに渡す
 protocol Step {
     
     associatedtype Input
