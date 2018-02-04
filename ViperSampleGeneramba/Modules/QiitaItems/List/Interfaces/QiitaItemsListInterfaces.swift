@@ -8,6 +8,7 @@ protocol QiitaItemsListWireframeInterface: WireframeInterface {
 protocol QiitaItemsListViewInterface: ViewInterface {
     func showNoContentScreen()
     func showQiitaItemsList()
+    func showDetail(item: QiitaItem)
     func scrolltoTop()
 }
 

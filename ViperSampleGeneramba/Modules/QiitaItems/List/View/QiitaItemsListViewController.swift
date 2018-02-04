@@ -1,5 +1,9 @@
 import UIKit
 
+protocol QiitaItemsListViewControllerDelegate: class {
+    func showDetail(_ controller: QiitaItemsListViewController, item: QiitaItem)
+}
+
 final class QiitaItemsListViewController: UIViewController {
 
     @IBOutlet weak var noResultLabel: UILabel!
@@ -8,6 +12,7 @@ final class QiitaItemsListViewController: UIViewController {
     // MARK: - Public properties -
 
     var presenter: QiitaItemsListPresenterInterface!
+    weak var delegate: QiitaItemsListViewControllerDelegate?
 
     // MARK: - Private properties -
     private var reachedBottom : Bool = false
@@ -106,6 +111,10 @@ extension QiitaItemsListViewController: QiitaItemsListViewInterface {
         hideLoading()
         refreshControl.endRefreshing()
         tableView.reloadData()
+    }
+    
+    func showDetail(item: QiitaItem) {
+        delegate?.showDetail(self, item: item)
     }
     
     func scrolltoTop() {

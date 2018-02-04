@@ -66,12 +66,10 @@ final class QiitaItemsListPresenter {
     
     private weak var _view: QiitaItemsListViewInterface?
     private var _interactor: QiitaItemsListInteractorInterface
-    private var _wireframe: QiitaItemsListWireframeInterface
     
     // MARK: - Lifecycle -
     
-    init(wireframe: QiitaItemsListWireframeInterface, view: QiitaItemsListViewInterface, interactor: QiitaItemsListInteractorInterface) {
-        _wireframe = wireframe
+    init(view: QiitaItemsListViewInterface, interactor: QiitaItemsListInteractorInterface) {
         _view = view
         _interactor = interactor
     }
@@ -103,7 +101,7 @@ extension QiitaItemsListPresenter: QiitaItemsListPresenterInterface {
 
     func searchBarTextDidChange(text: String) {
         
-        if !state.canLoad { return }
+        if state.state == .requesting { return }
         
         state = State.init(trigger: .searchTextChange,
                            state: .requesting)
@@ -132,7 +130,7 @@ extension QiitaItemsListPresenter: QiitaItemsListPresenterInterface {
         guard state.contents.count > indexPath.row else { return }
         
         let item = state.contents[indexPath.row]
-        _wireframe.showDetail(item: item)
+        _view?.showDetail(item: item)
     }
     
     func numberOfRows() -> Int {

@@ -6,13 +6,11 @@ final class QiitaItemDetailPresenter {
 
     private weak var _view: QiitaItemDetailViewInterface?
     private var _interactor: QiitaItemDetailInteractorInterface
-    private var _wireframe: QiitaItemDetailWireframeInterface
     private let _url: URL
 
     // MARK: - Lifecycle -
 
-    init(wireframe: QiitaItemDetailWireframeInterface, view: QiitaItemDetailViewInterface, interactor: QiitaItemDetailInteractorInterface, url: URL) {
-        _wireframe = wireframe
+    init(view: QiitaItemDetailViewInterface, interactor: QiitaItemDetailInteractorInterface, url: URL) {
         _view = view
         _interactor = interactor
         _url = url

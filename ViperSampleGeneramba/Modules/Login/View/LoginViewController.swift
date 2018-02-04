@@ -1,17 +1,17 @@
 import UIKit
 
+
+protocol LoginViewControllerDelegate: class {
+    func didLogin(_ controller: LoginViewController)
+}
+
 final class LoginViewController: UIViewController {
     
-    @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var idTextField: UITextField!
-    
     @IBOutlet weak var passwordTextField: UITextField!
     
-    @IBOutlet weak var loginButton: UIButton!
-    
-    // MARK: - Public properties -
-    
     var presenter: LoginPresenterInterface!
+    weak var delegate: LoginViewControllerDelegate?
     
     // MARK: - Lifecycle -
     
@@ -25,11 +25,9 @@ final class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonTapped(_ sender: Any) {
-        presenter.loginButtonTapped(id: idTextField.text ?? "", password: passwordTextField.text ?? "")
+        presenter.loginButtonTapped(id: idTextField.text, password: passwordTextField.text)
     }
 }
-
-// MARK: - Extensions -
 
 extension LoginViewController {
     private func _setupUI() {
@@ -39,6 +37,9 @@ extension LoginViewController {
 }
 
 extension LoginViewController: LoginViewInterface {
+    func didLogin() {
+        delegate?.didLogin(self)
+    }
 }
 
 extension LoginViewController: StoryboardLoadable {
@@ -54,4 +55,3 @@ extension LoginViewController: UITextFieldDelegate {
         return true
     }
 }
-

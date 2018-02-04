@@ -4,16 +4,13 @@ final class LoginPresenter {
     
     // MARK: - Public properties -
     
+    // MARK: - Lifecycle -
     private weak var _view: LoginViewInterface?
     private var _interactor: LoginInteractorInterface
-    private var _wireframe: LoginWireframeInterface
-    
-    // MARK: - Lifecycle -
-    
-    init(wireframe: LoginWireframeInterface, view: LoginViewInterface, interactor: LoginInteractorInterface) {
-        _wireframe = wireframe
-        _view = view
-        _interactor = interactor
+
+    init(view: LoginViewInterface, interactor: LoginInteractorInterface) {
+        self._view = view
+        self._interactor = interactor
     }
 }
 
@@ -21,9 +18,10 @@ final class LoginPresenter {
 
 extension LoginPresenter: LoginPresenterInterface {
     
-    func loginButtonTapped(id: String, password: String) {
+    func loginButtonTapped(id: String?, password: String?) {
         
-        guard !id.isEmpty && !password.isEmpty else {
+        guard let id = id, let password = password,
+            !id.isEmpty, !password.isEmpty else {
             showLoginError()
             return
         }
@@ -47,22 +45,20 @@ extension LoginPresenter: LoginPresenterInterface {
 
 extension LoginPresenter: LoginInteractorOutputInterface {
     func loginSuceeded() {
-        let userInfo = UserInfo(name: "Dummy")
-        _interactor.saveUserInfo(userInfo)
+        let user = UserInfo(name: "ダミー")
+        _interactor.saveUserInfo(user)
     }
     
     func loginFailed() {
-        _view?.hideLoading()
-        _view?.showErrorAlert(message: "ログインIDまたはパスワードが間違っています。")
+        _view?.showAlert(title: "エラー", message: "ログインIDまたはパスワードが間違っています。")
     }
     
     func userInfoSaveSucceeded() {
         _view?.hideLoading()
-        _wireframe.showMainScreen()
+        _view?.didLogin()
     }
     
     func userInfoSaveFailed() {
-        _view?.hideLoading()
-        _view?.showErrorAlert(message: "ログインIDまたはパスワードが間違っています。")
+        _view?.showAlert(title: "エラー", message: "ログインに失敗しました。一定時間経過後に再度お試しください。")
     }
 }

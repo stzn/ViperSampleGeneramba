@@ -11,10 +11,8 @@ final class CustomNavigationController: UINavigationController {
 extension CustomNavigationController {
     
     @objc func logout(_: UIBarButtonItem) {
-        let root = AppDelegate.shared.rootViewCotnroller
-        root.logout()
+        AppDelegate.shared.appFlowController.logout()
     }
-    
 }
 
 extension CustomNavigationController: UINavigationControllerDelegate {
