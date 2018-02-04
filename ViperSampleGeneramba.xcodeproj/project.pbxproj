@@ -8,17 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		11D17DE01D7105843C1D8F06 /* QiitaItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A671CB2D19B7E19781CFCB22 /* QiitaItemDetailViewController.swift */; };
-		1D392DC4BF94796A4BC28C81 /* SplashWireframeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2A9C5AD5FA6F98E18E4F50 /* SplashWireframeTests.swift */; };
 		2BA70F32C909A71E93206004 /* QiitaItemsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE57D047494FBE3CE10C81B5 /* QiitaItemsListInteractor.swift */; };
 		2F0A4977F40661129B5BA18A /* QiitaItemDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74C1D0F1E83E3D31C9D652C /* QiitaItemDetailPresenter.swift */; };
 		3585E866E5EE7773DB524B4A /* QiitaItemsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B1A7E50D7F5CD60F20E806 /* QiitaItemsListViewController.swift */; };
-		3E57F568C92CE22DE34CF17E /* QiitaItemDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7231A869580329F0087DCBB3 /* QiitaItemDetailViewControllerTests.swift */; };
-		59F7E118B540FA60BC45D414 /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA41BBC85E36D5C8EFA93155 /* LoginPresenterTests.swift */; };
 		635564ECAE40FFFD9F99E857 /* QiitaItemsListInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDED89BCE076097A916BC27 /* QiitaItemsListInterfaces.swift */; };
-		6922E8B5A0ECD5DB95E545B8 /* QiitaItemsListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A86E61E4C01A6E577B77498 /* QiitaItemsListInteractorTests.swift */; };
-		6F17FD25277C378B7542B6CB /* QiitaItemsListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C1FC88D710362239AAF912 /* QiitaItemsListPresenterTests.swift */; };
-		7936B5B858DF3B4DEF706E05 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11C6318FCECF619F49BFDB4 /* LoginViewControllerTests.swift */; };
-		9F39B71920A08EB7DE214EC8 /* SplashPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871546D900FF7CD2D25BDA31 /* SplashPresenterTests.swift */; };
 		AB0EE6371FFC792600E1379B /* ImageLoadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0EE6361FFC792600E1379B /* ImageLoadOperation.swift */; };
 		AB0EE6391FFC79FC00E1379B /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0EE6381FFC79FC00E1379B /* UIImage+Extensions.swift */; };
 		AB0EE63B1FFCA07E00E1379B /* APIDataManagerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0EE63A1FFCA07E00E1379B /* APIDataManagerInterface.swift */; };
@@ -89,18 +82,9 @@
 		AB7E674F1FFA25DC0090088A /* QiitaItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7E674D1FFA25DC0090088A /* QiitaItemTableViewCell.swift */; };
 		AB7E67501FFA25DC0090088A /* QiitaItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB7E674E1FFA25DC0090088A /* QiitaItemTableViewCell.xib */; };
 		ABC682C52002E3DB00CAB337 /* AlertShowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC682C42002E3DB00CAB337 /* AlertShowable.swift */; };
-		AC5124B996659FA95733CF4F /* SplashViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A64F8283A54400BDA75F9C /* SplashViewControllerTests.swift */; };
-		B34CC888577E5D5D22817878 /* QiitaItemsListWireframeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF477A3D51E840EC2D5A017 /* QiitaItemsListWireframeTests.swift */; };
-		BAE316E7BFD1F9F9DDF2382B /* QiitaItemDetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9527A68FCC6649880C64BF /* QiitaItemDetailPresenterTests.swift */; };
 		BCFC835C72511BE71AD5C225 /* QiitaItemsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD910ED28953C3C637B001E /* QiitaItemsListPresenter.swift */; };
-		C0356B8C0A29E658BF022946 /* LoginInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8110915D624FCFC09712940A /* LoginInteractorTests.swift */; };
-		C4928485602B11AFAE36B510 /* QiitaItemDetailWireframeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E560E5392ADCDB8723D8A85D /* QiitaItemDetailWireframeTests.swift */; };
-		CA2496862FE9C86DB5770281 /* SplashInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEA3FC3CBBD8C61859C5CE6 /* SplashInteractorTests.swift */; };
 		D32AA06F49E56380F035DD86 /* QiitaItemDetailInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E04E00D5E3FF3A9C96E6F /* QiitaItemDetailInterfaces.swift */; };
-		F25F66AE68EC263893575C3B /* QiitaItemsListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEDC7C9BE71558B2703F387 /* QiitaItemsListViewControllerTests.swift */; };
-		F66F0A830659B8D46C2D1A6C /* QiitaItemDetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8BA1594880FE3A6EA533E8 /* QiitaItemDetailInteractorTests.swift */; };
 		F6E30FA675A74B52572B0753 /* QiitaItemDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3427DFFE4B3120D3F2EB00E8 /* QiitaItemDetailInteractor.swift */; };
-		FF91B4B6700EEA01FA5BB0C1 /* LoginWireframeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D780084F1AC4966A99F13FD /* LoginWireframeTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,20 +98,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		05A64F8283A54400BDA75F9C /* SplashViewControllerTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SplashViewControllerTests.swift; sourceTree = "<group>"; };
-		0D780084F1AC4966A99F13FD /* LoginWireframeTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginWireframeTests.swift; sourceTree = "<group>"; };
-		0E2A9C5AD5FA6F98E18E4F50 /* SplashWireframeTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SplashWireframeTests.swift; sourceTree = "<group>"; };
-		2B9527A68FCC6649880C64BF /* QiitaItemDetailPresenterTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QiitaItemDetailPresenterTests.swift; sourceTree = "<group>"; };
 		3427DFFE4B3120D3F2EB00E8 /* QiitaItemDetailInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QiitaItemDetailInteractor.swift; sourceTree = "<group>"; };
-		3A86E61E4C01A6E577B77498 /* QiitaItemsListInteractorTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QiitaItemsListInteractorTests.swift; sourceTree = "<group>"; };
-		53C1FC88D710362239AAF912 /* QiitaItemsListPresenterTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QiitaItemsListPresenterTests.swift; sourceTree = "<group>"; };
 		62B1A7E50D7F5CD60F20E806 /* QiitaItemsListViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QiitaItemsListViewController.swift; sourceTree = "<group>"; };
-		6B8BA1594880FE3A6EA533E8 /* QiitaItemDetailInteractorTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QiitaItemDetailInteractorTests.swift; sourceTree = "<group>"; };
-		7231A869580329F0087DCBB3 /* QiitaItemDetailViewControllerTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QiitaItemDetailViewControllerTests.swift; sourceTree = "<group>"; };
 		7AD910ED28953C3C637B001E /* QiitaItemsListPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QiitaItemsListPresenter.swift; sourceTree = "<group>"; };
-		7CEA3FC3CBBD8C61859C5CE6 /* SplashInteractorTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SplashInteractorTests.swift; sourceTree = "<group>"; };
-		8110915D624FCFC09712940A /* LoginInteractorTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginInteractorTests.swift; sourceTree = "<group>"; };
-		871546D900FF7CD2D25BDA31 /* SplashPresenterTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SplashPresenterTests.swift; sourceTree = "<group>"; };
 		A671CB2D19B7E19781CFCB22 /* QiitaItemDetailViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QiitaItemDetailViewController.swift; sourceTree = "<group>"; };
 		AB0EE6361FFC792600E1379B /* ImageLoadOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadOperation.swift; sourceTree = "<group>"; };
 		AB0EE6381FFC79FC00E1379B /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
@@ -205,13 +178,8 @@
 		ABC682C42002E3DB00CAB337 /* AlertShowable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertShowable.swift; sourceTree = "<group>"; };
 		ADDED89BCE076097A916BC27 /* QiitaItemsListInterfaces.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QiitaItemsListInterfaces.swift; sourceTree = "<group>"; };
 		AE57D047494FBE3CE10C81B5 /* QiitaItemsListInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QiitaItemsListInteractor.swift; sourceTree = "<group>"; };
-		BCEDC7C9BE71558B2703F387 /* QiitaItemsListViewControllerTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QiitaItemsListViewControllerTests.swift; sourceTree = "<group>"; };
-		C11C6318FCECF619F49BFDB4 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		C74C1D0F1E83E3D31C9D652C /* QiitaItemDetailPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QiitaItemDetailPresenter.swift; sourceTree = "<group>"; };
 		C86E04E00D5E3FF3A9C96E6F /* QiitaItemDetailInterfaces.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QiitaItemDetailInterfaces.swift; sourceTree = "<group>"; };
-		DA41BBC85E36D5C8EFA93155 /* LoginPresenterTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
-		DBF477A3D51E840EC2D5A017 /* QiitaItemsListWireframeTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QiitaItemsListWireframeTests.swift; sourceTree = "<group>"; };
-		E560E5392ADCDB8723D8A85D /* QiitaItemDetailWireframeTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QiitaItemDetailWireframeTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,36 +200,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0059B6F55DB6055DD3DA23CD /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				8110915D624FCFC09712940A /* LoginInteractorTests.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
 		0ABF99732F30CDC2ADEB0DE0 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
 				ADDED89BCE076097A916BC27 /* QiitaItemsListInterfaces.swift */,
 			);
 			path = Interfaces;
-			sourceTree = "<group>";
-		};
-		0B04386D4C4F5DCEF9585502 /* Wireframe */ = {
-			isa = PBXGroup;
-			children = (
-				DBF477A3D51E840EC2D5A017 /* QiitaItemsListWireframeTests.swift */,
-			);
-			path = Wireframe;
-			sourceTree = "<group>";
-		};
-		0DFE0019858528B3968D30CA /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				3A86E61E4C01A6E577B77498 /* QiitaItemsListInteractorTests.swift */,
-			);
-			path = Interactor;
 			sourceTree = "<group>";
 		};
 		1CEAD80EA097AF769DC3DCE9 /* QiitaItems */ = {
@@ -273,22 +217,6 @@
 			path = QiitaItems;
 			sourceTree = "<group>";
 		};
-		2B0865559C1CDC7538FE542E /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				6B8BA1594880FE3A6EA533E8 /* QiitaItemDetailInteractorTests.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		329EE8279B243C026B1014F7 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				DA41BBC85E36D5C8EFA93155 /* LoginPresenterTests.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
 		37D4BED623EA368048015E4E /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,48 +226,6 @@
 				AB7E674E1FFA25DC0090088A /* QiitaItemTableViewCell.xib */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		3ED7EEE76BCFE31BFD5B0E2E /* Wireframe */ = {
-			isa = PBXGroup;
-			children = (
-				E560E5392ADCDB8723D8A85D /* QiitaItemDetailWireframeTests.swift */,
-			);
-			path = Wireframe;
-			sourceTree = "<group>";
-		};
-		41316B24BAAFD5F6109E7CAE /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				871546D900FF7CD2D25BDA31 /* SplashPresenterTests.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		4B0846B7E17B62FE48B87590 /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				AB3DD2B81FFB4BB300716508 /* QiitaItems */,
-				B975FB9DC98C695C1B97BB98 /* Splash */,
-				780318471AA1E8A76C1D0085 /* Login */,
-			);
-			path = Modules;
-			sourceTree = "<group>";
-		};
-		4FACFA766419D79888104A24 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				53C1FC88D710362239AAF912 /* QiitaItemsListPresenterTests.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		56FA39EE15D7FDBD6A3B8A65 /* Wireframe */ = {
-			isa = PBXGroup;
-			children = (
-				0E2A9C5AD5FA6F98E18E4F50 /* SplashWireframeTests.swift */,
-			);
-			path = Wireframe;
 			sourceTree = "<group>";
 		};
 		66ABE834570A4F0D77F19A76 /* Presenter */ = {
@@ -359,17 +245,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		780318471AA1E8A76C1D0085 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				887CA77E282D3511E4E6D6BA /* Wireframe */,
-				329EE8279B243C026B1014F7 /* Presenter */,
-				E02E3A6677CBC88C9CB215F8 /* View */,
-				0059B6F55DB6055DD3DA23CD /* Interactor */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
 		8419476CAC1F328C4F8835B2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -377,14 +252,6 @@
 				1CEAD80EA097AF769DC3DCE9 /* QiitaItems */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		887CA77E282D3511E4E6D6BA /* Wireframe */ = {
-			isa = PBXGroup;
-			children = (
-				0D780084F1AC4966A99F13FD /* LoginWireframeTests.swift */,
-			);
-			path = Wireframe;
 			sourceTree = "<group>";
 		};
 		9139EE0D1542DE7B12911335 /* Login */ = {
@@ -411,14 +278,6 @@
 			isa = PBXGroup;
 			children = (
 				7AD910ED28953C3C637B001E /* QiitaItemsListPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		A6C62D61DEE5522AD0EEDBF6 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				2B9527A68FCC6649880C64BF /* QiitaItemDetailPresenterTests.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -502,7 +361,6 @@
 				AB3DD2BC1FFB664B00716508 /* Common */,
 				AB29959F1FF9DF4D00C44E3C /* ViperSampleGenerambaTests.swift */,
 				AB2995A11FF9DF4D00C44E3C /* Info.plist */,
-				4B0846B7E17B62FE48B87590 /* Modules */,
 				AB3DD2C01FFB72CB00716508 /* TestHelper.swift */,
 			);
 			path = ViperSampleGenerambaTests;
@@ -680,37 +538,6 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
-		AB3DD2B81FFB4BB300716508 /* QiitaItems */ = {
-			isa = PBXGroup;
-			children = (
-				AB3DD2BA1FFB4BC600716508 /* Detail */,
-				AB3DD2B91FFB4BC100716508 /* List */,
-			);
-			path = QiitaItems;
-			sourceTree = "<group>";
-		};
-		AB3DD2B91FFB4BC100716508 /* List */ = {
-			isa = PBXGroup;
-			children = (
-				0B04386D4C4F5DCEF9585502 /* Wireframe */,
-				4FACFA766419D79888104A24 /* Presenter */,
-				AD64D429AC0423187691B003 /* View */,
-				0DFE0019858528B3968D30CA /* Interactor */,
-			);
-			path = List;
-			sourceTree = "<group>";
-		};
-		AB3DD2BA1FFB4BC600716508 /* Detail */ = {
-			isa = PBXGroup;
-			children = (
-				3ED7EEE76BCFE31BFD5B0E2E /* Wireframe */,
-				A6C62D61DEE5522AD0EEDBF6 /* Presenter */,
-				AF3D772F6C7806759F36A047 /* View */,
-				2B0865559C1CDC7538FE542E /* Interactor */,
-			);
-			path = Detail;
-			sourceTree = "<group>";
-		};
 		AB3DD2BC1FFB664B00716508 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -749,33 +576,6 @@
 			path = List;
 			sourceTree = "<group>";
 		};
-		AD64D429AC0423187691B003 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				BCEDC7C9BE71558B2703F387 /* QiitaItemsListViewControllerTests.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		AF3D772F6C7806759F36A047 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				7231A869580329F0087DCBB3 /* QiitaItemDetailViewControllerTests.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		B975FB9DC98C695C1B97BB98 /* Splash */ = {
-			isa = PBXGroup;
-			children = (
-				56FA39EE15D7FDBD6A3B8A65 /* Wireframe */,
-				41316B24BAAFD5F6109E7CAE /* Presenter */,
-				F62BF1B08987CD813D3B9ABD /* View */,
-				DB64AC12F4873B17C522D9FB /* Interactor */,
-			);
-			path = Splash;
-			sourceTree = "<group>";
-		};
 		C8280152A45EBC499ED34EDC /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
@@ -790,30 +590,6 @@
 				C86E04E00D5E3FF3A9C96E6F /* QiitaItemDetailInterfaces.swift */,
 			);
 			path = Interfaces;
-			sourceTree = "<group>";
-		};
-		DB64AC12F4873B17C522D9FB /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				7CEA3FC3CBBD8C61859C5CE6 /* SplashInteractorTests.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		E02E3A6677CBC88C9CB215F8 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				C11C6318FCECF619F49BFDB4 /* LoginViewControllerTests.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		F62BF1B08987CD813D3B9ABD /* View */ = {
-			isa = PBXGroup;
-			children = (
-				05A64F8283A54400BDA75F9C /* SplashViewControllerTests.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -999,24 +775,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB2995A01FF9DF4D00C44E3C /* ViperSampleGenerambaTests.swift in Sources */,
-				FF91B4B6700EEA01FA5BB0C1 /* LoginWireframeTests.swift in Sources */,
-				59F7E118B540FA60BC45D414 /* LoginPresenterTests.swift in Sources */,
-				7936B5B858DF3B4DEF706E05 /* LoginViewControllerTests.swift in Sources */,
-				C0356B8C0A29E658BF022946 /* LoginInteractorTests.swift in Sources */,
-				1D392DC4BF94796A4BC28C81 /* SplashWireframeTests.swift in Sources */,
-				9F39B71920A08EB7DE214EC8 /* SplashPresenterTests.swift in Sources */,
-				AC5124B996659FA95733CF4F /* SplashViewControllerTests.swift in Sources */,
-				CA2496862FE9C86DB5770281 /* SplashInteractorTests.swift in Sources */,
 				AB3DD2BF1FFB667200716508 /* String+ExtensionsTests.swift in Sources */,
-				B34CC888577E5D5D22817878 /* QiitaItemsListWireframeTests.swift in Sources */,
-				6F17FD25277C378B7542B6CB /* QiitaItemsListPresenterTests.swift in Sources */,
-				F25F66AE68EC263893575C3B /* QiitaItemsListViewControllerTests.swift in Sources */,
-				6922E8B5A0ECD5DB95E545B8 /* QiitaItemsListInteractorTests.swift in Sources */,
 				AB3DD2C11FFB72CB00716508 /* TestHelper.swift in Sources */,
-				C4928485602B11AFAE36B510 /* QiitaItemDetailWireframeTests.swift in Sources */,
-				BAE316E7BFD1F9F9DDF2382B /* QiitaItemDetailPresenterTests.swift in Sources */,
-				3E57F568C92CE22DE34CF17E /* QiitaItemDetailViewControllerTests.swift in Sources */,
-				F66F0A830659B8D46C2D1A6C /* QiitaItemDetailInteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
