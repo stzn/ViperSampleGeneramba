@@ -103,7 +103,7 @@ extension QiitaItemsListPresenter: QiitaItemsListPresenterInterface {
 
     func searchBarTextDidChange(text: String) {
         
-        if !state.canLoad { return }
+        if state.state == .requesting { return }
         
         state = State.init(trigger: .searchTextChange,
                            state: .requesting)
